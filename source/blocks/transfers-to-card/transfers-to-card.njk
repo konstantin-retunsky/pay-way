@@ -50,7 +50,7 @@
 				src: "sberbank"
 			}
 		],
-		classSlider: "transfer-to-card__slider"
+		class: "transfer-to-card__slider"
 	}
 %}
 
@@ -60,17 +60,21 @@
 		с карты на карту	
 	</h2>
 	<div class="transfer-to-card__amount-wrapper">
-		<input class="transfer-to-card__amount" type="text" pattern="^[0-9]+$" value="0">
+		<label class="visually-hidden" for="amount">Receive promotional offers?</label>
+		<input class="transfer-to-card__amount" type="number" id="amount" pattern="^[0-9]+$" value="0">
 		<b class="transfer-to-card__amount-text-bold">Введите сумму перевода</b>
 		<p class="transfer-to-card__amount-text">*Стоимость услуги 1% от суммы перевода</p>
 
 	</div>
 	<div class="transfer-to-card__cards-wrapper">
 		<div class="transfer-to-card__card-from-wrapper">
-			<input class="transfer-to-card__card-from input input--grey" name="card-from" type="text" placeholder="Номер карты отправителя">
-			<input class="transfer-to-card__card-from-date input input--grey" name="card-from-date" type="text" placeholder="ММ/ГГ">
+
+			<label class="visually-hidden" for="card-form">Receive promotional offers?</label>
+			<input class="transfer-to-card__card-from input input--grey" name="card-from" id="card-form" type="number" placeholder="Номер карты отправителя">
+			<label class="visually-hidden" for="card-from-date">Receive promotional offers?</label>
+			<input class="transfer-to-card__card-from-date input input--grey" id="card-from-date" name="card-from-date" type="number" placeholder="ММ/ГГ">
 		</div>
-		<input class="transfer-to-card__card-to input input--grey" type="text" placeholder="Номер карты получателя">
+		<input class="transfer-to-card__card-to input input--grey" type="number" placeholder="Номер карты получателя">
 		<button class="transfer-to-card__button button button--blue" type="submit">Перевести</button>
 	</div>
 	{{slider.value(dataSlider)}}

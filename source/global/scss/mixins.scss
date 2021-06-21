@@ -112,13 +112,14 @@
 }
 
 @mixin media-desktop {
-	@media (min-width: 1280px) {
+	@media (min-width: 1200px) {
 		@content;
 	}
 }
 
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
 	@font-face {
+		font-display: swap;
 		font-family: $font-family;
 		font-weight: $weight;
 		font-style: $style;
@@ -126,6 +127,5 @@
 			url("#{$file-path}-#{$weight}.woff2") format("woff2"),
 			url("#{$file-path}-#{$weight}.woff")
 			format("woff"); /* Modern Browsers */
-		font-display: swap;
 	}
 }

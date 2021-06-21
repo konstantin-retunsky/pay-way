@@ -1,7 +1,9 @@
 @import "../../global/scss/variables.scss";
 @import "../../global/scss/mixins.scss";
+@import "../../blocks/round-icon-wrapper/round-icon-wrapper.scss";
 @import "../../blocks/intro/intro.scss";
 @import "../../blocks/transfers-to-card/transfers-to-card.scss";
+@import "../../blocks/public-services/public-services.scss";
 
 .main {
 	padding-top: 75px;
@@ -10,4 +12,4 @@
 		padding-top: 90px;	
 	}
 }
-@import "../../blocks/public-services/public-services.scss";
+@import "../../blocks/payment-loans/payment-loans.scss";

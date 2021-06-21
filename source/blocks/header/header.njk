@@ -2,7 +2,7 @@
 
 <header class="header">
 	<div class="container">
-		<a class="header__logo" href="index.html">
+		<a class="header__logo" href="index.html" aria-label="Главная страница">
 			<svg class="header__logo-desktop header__logo-icon" width="141" height="56">
 				<use xlink:href="img/sprite-mono.svg#logo-desktop"></use>
 			</svg>
@@ -14,21 +14,19 @@
 		<div class="header__wrapper">
 			{% include "blocks/lang-switcher/lang-switcher.njk" %}
 			<div class="header__button-wrapper">
-				<a class="header__personal-account header__personal-account--auth" href="registration.html">
+				<a class="header__personal-account header__personal-account--auth" href="registration.html" aria-label="Персональный кабинет">
 					<svg class="header__personal-account-icon" width="30" height="30">
 						<use xlink:href="img/sprite-mono.svg#user-user-icon"></use>
 					</svg>
 				</a>
 				<a class="header__personal-account header__personal-account--button button" href="personal-account.html">
-				Вход
+					Вход
 				</a>
-				<button class="header__menu-toggle header__menu-toggle--open">
-					<svg class="header__menu-toggle-icon" width="26" height="17">
+				<button class="header__menu-toggle header__menu-toggle--open" aria-label="Показать\скрыть меню">
+					<svg class="header__menu-toggle-icon header__icon-open" width="26" height="17">
 						<use xlink:href="img/sprite-mono.svg#menu-icon-open"></use>
 					</svg>
-				</button>
-				<button class="header__menu-toggle header__menu-toggle--close">
-					<svg class="header__menu-toggle-icon" width="26" height="17">
+					<svg class="header__menu-toggle-icon  header__icon-close" width="26" height="17">
 						<use xlink:href="img/sprite-mono.svg#menu-icon-close"></use>
 					</svg>
 				</button>

@@ -7,10 +7,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<meta
-		name="description"
-		content="Главная страница">
+			name="description"
+			content="Главная страница">
 
-		<link rel="stylesheet" href="css/style.min.css">
+		<link rel="stylesheet preconnect" href="css/style.min.css">
 
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
@@ -22,7 +22,7 @@
 
 <header class="header">
 	<div class="container">
-		<a class="header__logo" href="index.html">
+		<a class="header__logo" href="index.html" aria-label="Главная страница">
 			<svg class="header__logo-desktop header__logo-icon" width="141" height="56">
 				<use xlink:href="img/sprite-mono.svg#logo-desktop"></use>
 			</svg>
@@ -112,21 +112,19 @@
 </div>
 
 			<div class="header__button-wrapper">
-				<a class="header__personal-account header__personal-account--auth" href="registration.html">
+				<a class="header__personal-account header__personal-account--auth" href="registration.html" aria-label="Персональный кабинет">
 					<svg class="header__personal-account-icon" width="30" height="30">
 						<use xlink:href="img/sprite-mono.svg#user-user-icon"></use>
 					</svg>
 				</a>
 				<a class="header__personal-account header__personal-account--button button" href="personal-account.html">
-				Вход
+					Вход
 				</a>
-				<button class="header__menu-toggle header__menu-toggle--open">
-					<svg class="header__menu-toggle-icon" width="26" height="17">
+				<button class="header__menu-toggle header__menu-toggle--open" aria-label="Показать\скрыть меню">
+					<svg class="header__menu-toggle-icon header__icon-open" width="26" height="17">
 						<use xlink:href="img/sprite-mono.svg#menu-icon-open"></use>
 					</svg>
-				</button>
-				<button class="header__menu-toggle header__menu-toggle--close">
-					<svg class="header__menu-toggle-icon" width="26" height="17">
+					<svg class="header__menu-toggle-icon  header__icon-close" width="26" height="17">
 						<use xlink:href="img/sprite-mono.svg#menu-icon-close"></use>
 					</svg>
 				</button>
@@ -139,6 +137,10 @@
 		
 	<main class="main">
 		
+
+
+</h3>
+
 
 <section class="intro">
 	<div class="container">
@@ -157,7 +159,7 @@
 			<div class="intro__markets intro__markets--tablet">
 				<a href="#" class="intro__market-link">
 					<svg class="intro__markets-icon" width="28" height="33">
-						<use xlink:href="img/sprite-mono.svg#apple-icon"></use>
+						<use xlink:href="img/sprite-mono.svg#apple-store-icon"></use>
 					</svg>
 					<div class="intro__market-link-text">
 						<span class="intro__markets-text">Скачать в</span>
@@ -179,7 +181,7 @@
 			<h2 class="intro__img-title">
 			Наше приложение
 		</h2>
-			<picture class="">
+			<picture>
 				<source
 						media="(min-width: 0)"
 						srcset="img/our_app.webp 1x,
@@ -216,42 +218,51 @@
 		</div>
 	</div>
 	<ul class="intro__functions">
-		<li class="intro__function">
-			<div class="intro__function-ico-wrapper">
-				<svg class="intro__function-icon" width="33" height="33">
-					<use xlink:href="img/sprite-mono.svg#electronic-transfers"></use>
-				</svg>
-			</div>
-			<div class="intro__function-text-wrapper">
-				<h3 class="intro__function-title">Электронный кошелёк</h3>
-				<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
-			</div>
-		</li>
-		<li class="intro__function">
-			<div class="intro__function-ico-wrapper">
-				<svg class="intro__function-icon" width="31" height="31">
-					<use xlink:href="img/sprite-mono.svg#money-transfers"></use>
-				</svg>
-			</div>
-			<div class="intro__function-text-wrapper">
-				<h3 class="intro__function-title">Денежные переводы</h3>
-				<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
-			</div>
-		</li>
-		<li class="intro__function">
-			<div class="intro__function-ico-wrapper">
-				<svg class="intro__function-icon" width="33" height="33">
-					<use xlink:href="img/sprite-mono.svg#payment"></use>
-				</svg>
-			</div>
-			<div class="intro__function-text-wrapper">
-				<h3 class="intro__function-title">Оплата товаров и услуг</h3>
-				<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
-			</div>
-		</li>
+		
+			<li class="intro__function">
+				
+	<div class="round-icon-wrapper ">
+		<svg class="round-icon-wrapper-icon" width="33" height="33">
+			<use xlink:href="img/sprite-mono.svg#electronic-transfers"></use>
+		</svg>
+	</div>
+
+				<div class="intro__function-text-wrapper">
+					<h3 class="intro__function-title">Электронный кошелёк</h3>
+					<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
+				</div>
+			</li>
+		
+			<li class="intro__function">
+				
+	<div class="round-icon-wrapper ">
+		<svg class="round-icon-wrapper-icon" width="33" height="33">
+			<use xlink:href="img/sprite-mono.svg#money-transfers"></use>
+		</svg>
+	</div>
+
+				<div class="intro__function-text-wrapper">
+					<h3 class="intro__function-title">Денежные переводы</h3>
+					<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
+				</div>
+			</li>
+		
+			<li class="intro__function">
+				
+	<div class="round-icon-wrapper ">
+		<svg class="round-icon-wrapper-icon" width="33" height="33">
+			<use xlink:href="img/sprite-mono.svg#payment"></use>
+		</svg>
+	</div>
+
+				<div class="intro__function-text-wrapper">
+					<h3 class="intro__function-title">Оплата товаров и услуг</h3>
+					<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
+				</div>
+			</li>
+		
 	</ul>
 </section>
-
 
 
 		
@@ -265,17 +276,21 @@
 		с карты на карту	
 	</h2>
 	<div class="transfer-to-card__amount-wrapper">
-		<input class="transfer-to-card__amount" type="text" pattern="^[0-9]+$" value="0">
+		<label class="visually-hidden" for="amount">Receive promotional offers?</label>
+		<input class="transfer-to-card__amount" type="number" id="amount" pattern="^[0-9]+$" value="0">
 		<b class="transfer-to-card__amount-text-bold">Введите сумму перевода</b>
 		<p class="transfer-to-card__amount-text">*Стоимость услуги 1% от суммы перевода</p>
 
 	</div>
 	<div class="transfer-to-card__cards-wrapper">
 		<div class="transfer-to-card__card-from-wrapper">
-			<input class="transfer-to-card__card-from input input--grey" name="card-from" type="text" placeholder="Номер карты отправителя">
-			<input class="transfer-to-card__card-from-date input input--grey" name="card-from-date" type="text" placeholder="ММ/ГГ">
+
+			<label class="visually-hidden" for="card-form">Receive promotional offers?</label>
+			<input class="transfer-to-card__card-from input input--grey" name="card-from" id="card-form" type="number" placeholder="Номер карты отправителя">
+			<label class="visually-hidden" for="card-from-date">Receive promotional offers?</label>
+			<input class="transfer-to-card__card-from-date input input--grey" id="card-from-date" name="card-from-date" type="number" placeholder="ММ/ГГ">
 		</div>
-		<input class="transfer-to-card__card-to input input--grey" type="text" placeholder="Номер карты получателя">
+		<input class="transfer-to-card__card-to input input--grey" type="number" placeholder="Номер карты получателя">
 		<button class="transfer-to-card__button button button--blue" type="submit">Перевести</button>
 	</div>
 	
@@ -285,86 +300,246 @@
 				
 					<li class="slider__item swiper-slide">
 						<a class="slider__link" href="#">
-							<img src="img/sberbank.webp" width="127" height="36" alt="tet">
+							<img src="img/sberbank.webp" width="127" height="36" alt="Логотип банка">
 						</a>
 					</li>
 				
 					<li class="slider__item swiper-slide">
 						<a class="slider__link" href="#">
-							<img src="img/tinkof.webp" width="116" height="74" alt="tet">
+							<img src="img/tinkof.webp" width="116" height="74" alt="Логотип банка">
 						</a>
 					</li>
 				
 					<li class="slider__item swiper-slide">
 						<a class="slider__link" href="#">
-							<img src="img/alfabank.webp" width="148" height="61" alt="tet">
+							<img src="img/alfabank.webp" width="148" height="61" alt="Логотип банка">
 						</a>
 					</li>
 				
 					<li class="slider__item swiper-slide">
 						<a class="slider__link" href="#">
-							<img src="img/agrobank.webp" width="107" height="107" alt="tet">
+							<img src="img/agrobank.webp" width="107" height="107" alt="Логотип банка">
 						</a>
 					</li>
 				
 					<li class="slider__item swiper-slide">
 						<a class="slider__link" href="#">
-							<img src="img/ipotekabank.webp" width="101" height="101" alt="tet">
+							<img src="img/ipotekabank.webp" width="101" height="101" alt="Логотип банка">
 						</a>
 					</li>
 				
 					<li class="slider__item swiper-slide">
 						<a class="slider__link" href="#">
-							<img src="img/trastbank.webp" width="111" height="111" alt="tet">
+							<img src="img/trastbank.webp" width="111" height="111" alt="Логотип банка">
 						</a>
 					</li>
 				
 					<li class="slider__item swiper-slide">
 						<a class="slider__link" href="#">
-							<img src="img/sberbank.webp" width="127" height="36" alt="tet">
+							<img src="img/sberbank.webp" width="127" height="36" alt="Логотип банка">
 						</a>
 					</li>
 				
 					<li class="slider__item swiper-slide">
 						<a class="slider__link" href="#">
-							<img src="img/sberbank.webp" width="127" height="36" alt="tet">
+							<img src="img/sberbank.webp" width="127" height="36" alt="Логотип банка">
 						</a>
 					</li>
 				
 					<li class="slider__item swiper-slide">
 						<a class="slider__link" href="#">
-							<img src="img/sberbank.webp" width="127" height="36" alt="tet">
+							<img src="img/sberbank.webp" width="127" height="36" alt="Логотип банка">
 						</a>
 					</li>
 				
 			</ul>
 		</div>
-		<button class="slider__button slider__button--next">
+		<button class="slider__button slider__button--next" aria-label="Прелистнуть вперед">
 			<svg class="slider__button-icon" width="8" height="12">
 				<use xlink:href="img/sprite-mono.svg#arrow-slider"></use>
 			</svg>
 		</button>
-		<button class="slider__button slider__button--prev">
+		<button class="slider__button slider__button--prev" aria-label="Перелестнуть назад">
 			<svg class="slider__button-icon" width="8" height="12">
 				<use xlink:href="img/sprite-mono.svg#arrow-slider"></use>
 			</svg>
 		</button>
 	</div>
 
+</section>
 
+		
+
+
+
+
+<section class="public-services">
+	<div class="container">
+		<div class="public-services__text-wrapper">
+			<h2 class="public-services__title section-title section-title--white">
+		Государственные,<br> 
+		Коммунальные<br>
+		услуги<br>
+			</h2>
+			<p class="public-services__description">Плата за свет, газ, телефон и многое другое..</p>
+			<a href="all-services.html" class="public-services__link-desktop button button--blue">
+				Весь список услуг
+			</a>
+		</div>
+		<div class="public-services__wrapper">
+			<ul class="public-services__list">
+				
+					<li class="public-services__item">
+						
+	<div class="round-icon-wrapper public-services__icon-wrapper">
+		<svg class="round-icon-wrapper-icon" width="35" height="35">
+			<use xlink:href="img/sprite-mono.svg#traffic-police-fines"></use>
+		</svg>
+	</div>
+
+						<span class="public-services__item-text">Оплата налогов</span>
+					</li>
+				
+					<li class="public-services__item">
+						
+	<div class="round-icon-wrapper public-services__icon-wrapper">
+		<svg class="round-icon-wrapper-icon" width="35" height="35">
+			<use xlink:href="img/sprite-mono.svg#electric-power"></use>
+		</svg>
+	</div>
+
+						<span class="public-services__item-text">Электроэнергия</span>
+					</li>
+				
+					<li class="public-services__item">
+						
+	<div class="round-icon-wrapper public-services__icon-wrapper">
+		<svg class="round-icon-wrapper-icon" width="35" height="35">
+			<use xlink:href="img/sprite-mono.svg#payment-taxes"></use>
+		</svg>
+	</div>
+
+						<span class="public-services__item-text">Штрафы ГИБДД</span>
+					</li>
+				
+			</ul>
+			
+	<picture class="">
+		
+			
+				
+					<source
+						type="image/webp"
+						media="(min-width: 1200px)"
+						srcset="img/public-services-1200px.webp 1x,
+										img/public-services-1200px@2x.webp 2x">
+					<source
+						media="(min-width: 1200px)"
+						srcset="img/public-services-1200px.jpg 1x,
+										img/public-services-1200px@2x.jpg 2x">
+				
+			
+				
+					<source
+						media="(min-width: 0)"
+						srcset="img/public-services-320px.webp 1x,
+										img/public-services-320px@2x.webp 2x">
+					<img
+						class="public-services__img"
+						src="img/public-services-320px.jpg"
+						srcset="img/public-services-320px.jpg 1x,
+									jimg/public-services-320px@2x.jpg 2x"
+						alt="Изображение сайта на планшете"
+						width="601"
+						height="432">
+				
+			
+		
+	</picture>
+
+		</div>
+		<a href="all-services.html" class="public-services__link-mobile button button--blue">
+			Весь список услуг
+		</a>
+	</div>
 </section>
 
 
 
 
-<section class="">
-	<h2 class="visually-hidden"></h2>
-	<h2 class="">
-		
+
+
+<section class="payment-loans">
+	<h2 class="payment-loans__title section-title">
+		Погашение кредитов
 	</h2>
-	<p class="">
-		
-	</p>
+	
+	<div class="slider payment-loans__slider">
+		<div class=" swiper-container">
+			<ul class="slider__list swiper-wrapper">
+				
+					<li class="slider__item swiper-slide">
+						<a class="slider__link" href="#">
+							<img src="img/aloqa-credits.webp" width="153" height="74" alt="Логотип банка">
+						</a>
+					</li>
+				
+					<li class="slider__item swiper-slide">
+						<a class="slider__link" href="#">
+							<img src="img/ipoteka-credits.webp" width="153" height="74" alt="Логотип банка">
+						</a>
+					</li>
+				
+					<li class="slider__item swiper-slide">
+						<a class="slider__link" href="#">
+							<img src="img/qqb-credits.webp" width="152" height="74" alt="Логотип банка">
+						</a>
+					</li>
+				
+					<li class="slider__item swiper-slide">
+						<a class="slider__link" href="#">
+							<img src="img/qqb-credits.webp" width="152" height="74" alt="Логотип банка">
+						</a>
+					</li>
+				
+					<li class="slider__item swiper-slide">
+						<a class="slider__link" href="#">
+							<img src="img/qqb-credits.webp" width="152" height="74" alt="Логотип банка">
+						</a>
+					</li>
+				
+					<li class="slider__item swiper-slide">
+						<a class="slider__link" href="#">
+							<img src="img/qqb-credits.webp" width="152" height="74" alt="Логотип банка">
+						</a>
+					</li>
+				
+					<li class="slider__item swiper-slide">
+						<a class="slider__link" href="#">
+							<img src="img/sqb-credits.webp" width="153" height="74" alt="Логотип банка">
+						</a>
+					</li>
+				
+					<li class="slider__item swiper-slide">
+						<a class="slider__link" href="#">
+							<img src="img/asakabank.webp" width="153" height="74" alt="Логотип банка">
+						</a>
+					</li>
+				
+			</ul>
+		</div>
+		<button class="slider__button slider__button--next" aria-label="Прелистнуть вперед">
+			<svg class="slider__button-icon" width="8" height="12">
+				<use xlink:href="img/sprite-mono.svg#arrow-slider"></use>
+			</svg>
+		</button>
+		<button class="slider__button slider__button--prev" aria-label="Перелестнуть назад">
+			<svg class="slider__button-icon" width="8" height="12">
+				<use xlink:href="img/sprite-mono.svg#arrow-slider"></use>
+			</svg>
+		</button>
+	</div>
+
 </section>
 
 	</main>

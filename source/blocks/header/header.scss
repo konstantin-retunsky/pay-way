@@ -15,10 +15,15 @@
 	@include media-tablet {
 		padding: 25px 0;
 	}
+
+	@include media-desktop {
+		padding: 25px 4%;
+	}
 }
 
 .header--fixed {
 	background-color: $white-2;
+	box-shadow: 0px 0px 8px rgba($black, 0.08);
 
 	.lang-switcher__text {
 		color: $port-gore;
@@ -202,10 +207,20 @@
 	}
 }
 
-.header__menu-toggle--close {
-	display: none;
+.header__menu-toggle--open {
+	.header__icon-close {
+		display: none;
+	}
+
+	.header__icon-open {
+		display: inline-block;
+	}
 }
 
-.header__menu-toggle--open {
+.header__icon-close {
 	display: inline-block;
+}
+
+.header__icon-open {
+	display: none;
 }

@@ -1,12 +1,74 @@
 {% import "../../global/page/mixins.njk" as mixins %}
+{% import "../../blocks/round-icon-wrapper/round-icon-wrapper.njk" as iconWrapper %}
 
+{%
+	set items = [
+		{
+			icon: {
+				width: 35,
+				height: 35,
+				svgName: "traffic-police-fines",
+				class: "public-services__icon-wrapper"
+			},
+			text: "Оплата налогов"
+		},
+		{
+			icon: {
+				width: 35,
+				height: 35,
+				svgName: "electric-power",
+				class: "public-services__icon-wrapper"
+			},
+			text: "Электроэнергия"
+		},
+		{
+			icon: {
+				width: 35,
+				height: 35,
+				svgName: "payment-taxes",
+				class: "public-services__icon-wrapper"
+			},
+			text: "Штрафы ГИБДД"
+		}
+	]
+%}
 
-<section class="{{ data.class }}">
-	<h2 class="visually-hidden"></h2>
-	<h2 class="{{ data.title.class }}">
-		{{ data.title.text }}
-	</h2>
-	<p class="{{ data.text.class }}">
-		{{ data.text.text }}
-	</p>
+<section class="public-services">
+	<div class="container">
+		<div class="public-services__text-wrapper">
+			<h2 class="public-services__title section-title section-title--white">
+		Государственные,<br> 
+		Коммунальные<br>
+		услуги<br>
+			</h2>
+			<p class="public-services__description">Плата за свет, газ, телефон и многое другое..</p>
+			<a href="all-services.html" class="public-services__link-desktop button button--blue">
+				Весь список услуг
+			</a>
+		</div>
+		<div class="public-services__wrapper">
+			<ul class="public-services__list">
+				{% for item in items %}
+					<li class="public-services__item">
+						{{iconWrapper.value(item.icon)}}
+						<span class="public-services__item-text">{{item.text}}</span>
+					</li>
+				{% endfor %}
+			</ul>
+			{{
+				mixins.img({
+					class: "public-services__img",
+					width: 601,
+					height: 432,
+					src: "img/public-services",
+					alt: "Изображение сайта на планшете",
+					media: ['1200px', '320px'],
+					type: 'raster'
+				})
+			}}
+		</div>
+		<a href="all-services.html" class="public-services__link-mobile button button--blue">
+			Весь список услуг
+		</a>
+	</div>
 </section>

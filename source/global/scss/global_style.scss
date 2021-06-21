@@ -26,6 +26,16 @@ body {
 
 	mix-blend-mode: normal;
 }
+input[type="number"] {
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
 
 picture {
 	display: block;
@@ -56,6 +66,10 @@ a {
 	@include media-tablet {
 		font-size: 46px;
 	}
+}
+
+.section-title--white {
+	color: $white;
 }
 
 .input {
@@ -149,17 +163,20 @@ a {
 
 .button--blue {
 	color: $white;
+	border-color: $dodger-blue;
 
 	background-color: $dodger-blue;
 
 	&:focus,
 	&:hover {
 		background-color: $cerulean;
+		border-color: $cerulean;
 		color: $white;
 	}
 
 	&:active {
 		background-color: $malibu;
+		border-color: $malibu;
 	}
 }
 

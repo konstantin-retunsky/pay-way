@@ -1,0 +1,9 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{% macro value(args) %}
+	<div class="round-icon-wrapper {{args.class}}">
+		<svg class="round-icon-wrapper-icon" width="{{args.width}}" height="{{args.height}}">
+			<use xlink:href="img/sprite-mono.svg#{{args.svgName}}"></use>
+		</svg>
+	</div>
+{% endmacro %}

@@ -1,4 +1,38 @@
 {% import "../../global/page/mixins.njk" as mixins %}
+{% import "../../blocks/round-icon-wrapper/round-icon-wrapper.njk" as iconWrapper %}
+
+</h3>
+{%
+	set functionItems = [
+		{
+			icon: {
+				width: 33,
+				height: 33,
+				svgName: "electronic-transfers"
+			},
+			title: "Электронный кошелёк",
+			text: "Lorem ipsum dolor sit amet"
+		},
+		{
+			icon: {
+				width: 33,
+				height: 33,
+				svgName: "money-transfers"
+			},
+			title: "Денежные переводы",
+			text: "Lorem ipsum dolor sit amet"
+		},
+		{
+			icon: {
+				width: 33,
+				height: 33,
+				svgName: "payment"
+			},
+			title: "Оплата товаров и услуг",
+			text: "Lorem ipsum dolor sit amet"
+		}
+	]
+%}
 
 <section class="intro">
 	<div class="container">
@@ -17,7 +51,7 @@
 			<div class="intro__markets intro__markets--tablet">
 				<a href="#" class="intro__market-link">
 					<svg class="intro__markets-icon" width="28" height="33">
-						<use xlink:href="img/sprite-mono.svg#apple-icon"></use>
+						<use xlink:href="img/sprite-mono.svg#apple-store-icon"></use>
 					</svg>
 					<div class="intro__market-link-text">
 						<span class="intro__markets-text">Скачать в</span>
@@ -39,7 +73,7 @@
 			<h2 class="intro__img-title">
 			Наше приложение
 		</h2>
-			<picture class="">
+			<picture>
 				<source
 						media="(min-width: 0)"
 						srcset="img/our_app.webp 1x,
@@ -76,167 +110,15 @@
 		</div>
 	</div>
 	<ul class="intro__functions">
-		<li class="intro__function">
-			<div class="intro__function-ico-wrapper">
-				<svg class="intro__function-icon" width="33" height="33">
-					<use xlink:href="img/sprite-mono.svg#electronic-transfers"></use>
-				</svg>
-			</div>
-			<div class="intro__function-text-wrapper">
-				<h3 class="intro__function-title">Электронный кошелёк</h3>
-				<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
-			</div>
-		</li>
-		<li class="intro__function">
-			<div class="intro__function-ico-wrapper">
-				<svg class="intro__function-icon" width="31" height="31">
-					<use xlink:href="img/sprite-mono.svg#money-transfers"></use>
-				</svg>
-			</div>
-			<div class="intro__function-text-wrapper">
-				<h3 class="intro__function-title">Денежные переводы</h3>
-				<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
-			</div>
-		</li>
-		<li class="intro__function">
-			<div class="intro__function-ico-wrapper">
-				<svg class="intro__function-icon" width="33" height="33">
-					<use xlink:href="img/sprite-mono.svg#payment"></use>
-				</svg>
-			</div>
-			<div class="intro__function-text-wrapper">
-				<h3 class="intro__function-title">Оплата товаров и услуг</h3>
-				<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
-			</div>
-		</li>
+		{% for item in functionItems %}
+			<li class="intro__function">
+				{{iconWrapper.value(item.icon)}}
+				<div class="intro__function-text-wrapper">
+					<h3 class="intro__function-title">{{item.title}}</h3>
+					<p class="intro__function-description">{{item.text}}</p>
+				</div>
+			</li>
+		{% endfor %}
 	</ul>
 </section>
 
-{# <script>
-	document.addEventListener("DOMContentLoaded", function () {
-		var phoneInputs = document.querySelectorAll('input[data-tel-input]');
-
-		var getInputNumbersValue = function (input) {
-			// Return stripped input value — just numbers
-			return input
-				.value
-				.replace(/\D/g, '');
-		}
-
-		var onPhonePaste = function (e) {
-			var input = e.target,
-				inputNumbersValue = getInputNumbersValue(input);
-			var pasted = e.clipboardData || window.clipboardData;
-			if (pasted) {
-				var pastedText = pasted.getData('Text');
-				if (/\D/g.test(pastedText)) {
-					// Attempt to paste non-numeric symbol — remove all non-numeric symbols,
-					// formatting will be in onPhoneInput handler
-					input.value = inputNumbersValue;
-					return;
-				}
-			}
-		}
-
-		var onPhoneInput = function (e) {
-			var input = e.target,
-				inputNumbersValue = getInputNumbersValue(input),
-				selectionStart = input.selectionStart,
-				formattedInputValue = "";
-
-			if (!inputNumbersValue) {
-				return input.value = "";
-			}
-
-			if (input.value.length != selectionStart) {
-				// Editing in the middle of input, not last symbol
-				if (e.data && /\D/g.test(e.data)) {
-					// Attempt to input non-numeric symbol
-					input.value = inputNumbersValue;
-				}
-				return;
-			}
-
-			if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
-				if (inputNumbersValue[0] == "9") 
-					inputNumbersValue = "7" + inputNumbersValue;
-				var firstSymbols = (inputNumbersValue[0] == "8")
-					? "8"
-					: "+7";
-				if (inputNumbersValue.length > 1) {
-					formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
-				}
-				if (inputNumbersValue.length >= 5) {
-					formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
-				}
-				if (inputNumbersValue.length >= 8) {
-					formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
-				}
-				if (inputNumbersValue.length >= 10) {
-					formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
-				}
-			} else {
-				formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
-			}
-			input.value = formattedInputValue;
-		}
-		var onPhoneKeyDown = function (e) {
-			// Clear input after remove last symbol
-			var inputValue = e
-				.target
-				.value
-				.replace(/\D/g, '');
-			if (e.keyCode == 8 && inputValue.length == 1) {
-				e.target.value = "";
-			}
-		}
-		for (var phoneInput of phoneInputs) {
-			phoneInput.addEventListener('keydown', onPhoneKeyDown);
-			phoneInput.addEventListener('input', onPhoneInput, false);
-			phoneInput.addEventListener('paste', onPhonePaste, false);
-		}
-	})
-</script>
-
-<!-- Optional cosmetic CSS -->
-<style type="text/css">
-	* {
-		padding: 0;
-		margin: 0;
-	}
-	body {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-items: center;
-	}
-	input {
-		font-size: 30px;
-		padding: 15px;
-		border: 1px solid #ccc;
-		min-width: 300px;
-		max-width: 400px;
-		width: 90%;
-	}
-	input:focus {
-		outline: none;
-	}
-	.placeholder {
-		flex: 1;
-	}
-</style>
-
-<!-- Optional cosmetic JS -->
-<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function () {
-		document
-			.querySelector('input')
-			.focus();
-	})
-</script>
-
-<div class="placeholder"></div>
-<input type="tel" data-tel-input placeholder="Телефон" maxlength="18"/>
-<div class="placeholder"></div> #}

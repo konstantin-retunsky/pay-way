@@ -2,6 +2,12 @@
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function getDirection() {
+  var windowWidth = window.innerWidth;
+  var direction = window.innerWidth <= 760 ? "vertical" : "horizontal";
+  return direction;
+}
+
 (function (global, factory) {
   (typeof exports === "undefined" ? "undefined" : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Swiper = factory());
 })(void 0, function () {
@@ -9870,11 +9876,12 @@ if (buttonsSwitch) {
 
 var navToggle = document.querySelector(".header__menu-toggle");
 var links = document.querySelectorAll(".navigation__link");
+var nav = document.querySelector(".navigation");
 
-if (navToggle) {
-  var nav = document.querySelector(".navigation");
+if (navToggle && nav) {
   navToggle.addEventListener("click", function (e) {
-    return nav ? nav.classList.toggle("navigation--active") : 0;
+    nav.classList.toggle("navigation--active");
+    navToggle.classList.toggle("header__menu-toggle--open");
   });
 }
 
@@ -9882,18 +9889,18 @@ if (links) {
   links.forEach(function (link) {
     link.addEventListener("click", function (e) {
       var activeLink = document.querySelector(".navigation__link--active");
-      activeLink ? activeLink.classList.remove('navigation__link--active') : 0;
-      link.classList.add('navigation__link--active');
+      activeLink ? activeLink.classList.remove("navigation__link--active") : 0;
+      link.classList.add("navigation__link--active");
     });
   });
 }
 
-var swiper = new Swiper(".swiper-container", {
+var swiper = new Swiper(".payment-loans .swiper-container", {
   slidesPerView: "auto",
   // direction: getDirection(),
   navigation: {
-    nextEl: ".slider__button--next",
-    prevEl: ".slider__button--prev"
+    nextEl: ".payment-loans .slider__button--next",
+    prevEl: ".payment-loans .slider__button--prev"
   } // on: {
   // 	resize: function () {
   // 		swiper.changeDirection(getDirection());
@@ -9901,9 +9908,16 @@ var swiper = new Swiper(".swiper-container", {
   // },
 
 });
+var swiperTransferCard = new Swiper(".transfer-to-card .swiper-container", {
+  slidesPerView: "auto",
+  // direction: getDirection(),
+  navigation: {
+    nextEl: ".transfer-to-card .slider__button--next",
+    prevEl: ".transfer-to-card .slider__button--prev"
+  } // on: {
+  // 	resize: function () {
+  // 		swiper.changeDirection(getDirection());
+  // 	},
+  // },
 
-function getDirection() {
-  var windowWidth = window.innerWidth;
-  var direction = window.innerWidth <= 760 ? "vertical" : "horizontal";
-  return direction;
-}
+});

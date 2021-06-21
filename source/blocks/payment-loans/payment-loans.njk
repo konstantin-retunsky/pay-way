@@ -1,0 +1,64 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+{% import "../../blocks/slider/slider.njk" as slider %}
+
+{%
+	set data = {
+		class: "payment-loans",
+		title: {
+			class: "payment-loans__title section-title",
+			text: "Погашение кредитов"
+		},
+		slider: {
+			class: "payment-loans__slider",
+			images: [
+				{
+					width: 153,
+					height: 74,
+					src: "aloqa-credits"
+				},
+				{
+					width: 153,
+					height: 74,
+					src: "ipoteka-credits"
+				},
+				{
+					width: 152,
+					height: 74,
+					src: "qqb-credits"
+				},
+				{
+					width: 152,
+					height: 74,
+					src: "qqb-credits"
+				},
+				{
+					width: 152,
+					height: 74,
+					src: "qqb-credits"
+				},
+				{
+					width: 152,
+					height: 74,
+					src: "qqb-credits"
+				},
+				{
+					width: 153,
+					height: 74,
+					src: "sqb-credits"
+				},
+				{
+					width: 153,
+					height: 74,
+					src: "asakabank"
+				}
+			]
+		}
+	}
+%}
+
+<section class="{{ data.class }}">
+	<h2 class="{{ data.title.class }}">
+		{{ data.title.text }}
+	</h2>
+	{{slider.value(data.slider)}}
+</section>

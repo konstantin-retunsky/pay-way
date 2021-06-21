@@ -9,9 +9,6 @@
 	@include media-tablet {
 		padding: 100px 4%;
 	}
-	@include media-desktop {
-		padding: 100px 0;
-	}
 }
 
 .transfer-to-card__amount-wrapper {
@@ -37,8 +34,16 @@
 	padding: 0;
 	border: none;
 	background-color: transparent;
-	font-size: 165px;
+	font-size: 67px;
 	text-align: center;
+
+	@media (min-width: 430px) {
+		font-size: 75px;
+	}
+
+	@media (min-width: 550px) {
+		font-size: 95px;
+	}
 
 	color: rgba($nepal, 0.5);
 
