@@ -1,0 +1,28 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{% macro value(args) %}
+	<div class="slider {{args.classSlider}}">
+		<div class=" swiper-container">
+			<ul class="slider__list swiper-wrapper">
+				{% for img in args.images %}
+					<li class="slider__item swiper-slide">
+						<a class="slider__link" href="#">
+							<img src="img/{{img.src}}.webp" width="{{img.width}}" height="{{img.height}}" alt="tet">
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<button class="slider__button slider__button--next">
+			<svg class="slider__button-icon" width="8" height="12">
+				<use xlink:href="img/sprite-mono.svg#arrow-slider"></use>
+			</svg>
+		</button>
+		<button class="slider__button slider__button--prev">
+			<svg class="slider__button-icon" width="8" height="12">
+				<use xlink:href="img/sprite-mono.svg#arrow-slider"></use>
+			</svg>
+		</button>
+	</div>
+
+{% endmacro %}

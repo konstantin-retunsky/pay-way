@@ -1,0 +1,160 @@
+@import "../../blocks/slider/slider.scss";
+.transfer-to-card {
+	display: flex;
+	flex-direction: column;
+	padding: 85px 4%;
+	max-width: 1200px;
+	margin: 0 auto;
+
+	@include media-tablet {
+		padding: 100px 4%;
+	}
+	@include media-desktop {
+		padding: 100px 0;
+	}
+}
+
+.transfer-to-card__amount-wrapper {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
+	@media (min-width: 926px) {
+		order: 3;
+	}
+}
+
+.transfer-to-card__title {
+	margin: 0;
+	margin-bottom: 47px;
+
+	@media (min-width: 926px) {
+		margin-bottom: 67px;
+	}
+}
+
+.transfer-to-card__amount {
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	font-size: 165px;
+	text-align: center;
+
+	color: rgba($nepal, 0.5);
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.transfer-to-card__amount-text-bold {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+
+	color: $port-gore;
+}
+
+.transfer-to-card__amount-text {
+	margin: 0;
+	margin-bottom: 42px;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 140%;
+	text-align: center;
+	color: $amethyst-smoke;
+}
+
+.transfer-to-card__cards-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@media (min-width: 926px) {
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: 14px;
+	}
+}
+
+.transfer-to-card__card-from-wrapper {
+	position: relative;
+	width: max-content;
+	width: 100%;
+	max-width: 388px;
+
+	@media (min-width: 926px) {
+		max-width: 332px;
+	}
+
+	@include media-desktop {
+		max-width: 470px;
+	}
+}
+
+.transfer-to-card__card-from-date {
+	position: absolute;
+	right: 9px;
+	border: 0;
+	background-color: transparent;
+	max-width: 60px;
+	padding-right: 0;
+	padding-left: 0;
+
+	&:focus {
+		outline: none;
+		border: none;
+	}
+}
+
+.transfer-to-card__card-from {
+	margin-bottom: 20px;
+}
+
+.transfer-to-card__card-to {
+	margin-bottom: 50px;
+}
+
+.transfer-to-card__button,
+.transfer-to-card__card-to,
+.transfer-to-card__card-from {
+	@media (min-width: 926px) {
+		margin-bottom: 0;
+	}
+}
+
+.transfer-to-card__card-from,
+.transfer-to-card__card-to {
+	width: 100%;
+	max-width: 388px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 140%;
+	color: $amethyst-smoke;
+
+	@media (min-width: 926px) {
+		max-width: 332px;
+	}
+
+	@include media-desktop {
+		max-width: 470px;
+	}
+}
+
+.transfer-to-card__button {
+	padding: 13px 30px;
+	width: 100%;
+	max-width: 388px;
+	margin-bottom: 25px;
+	line-height: 123%;
+
+	@media (min-width: 926px) {
+		max-width: 170px;
+	}
+}
+
+.transfer-to-card__slider {
+	order: 4;
+}

@@ -1,0 +1,12 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+
+<section class="{{ data.class }}">
+	<h2 class="visually-hidden"></h2>
+	<h2 class="{{ data.title.class }}">
+		{{ data.title.text }}
+	</h2>
+	<p class="{{ data.text.class }}">
+		{{ data.text.text }}
+	</p>
+</section>

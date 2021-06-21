@@ -1,0 +1,242 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+<section class="intro">
+	<div class="container">
+		<div class="intro__content-wrapper">
+			<h1 class="intro__title">
+				<span class="intro__title-blue">Бизнес-счёт </span>
+			у вас в кармане
+		</h1>
+			<p class="intro__text">
+				<b class="intro__text-bold">Управляйте своими финансами легко!</b> Онлайн-платежи в популярных валютах, включая USD и EUR, переводы SWIFT и SEPA, онлайн-конвертация. Индивидуальный IBAN, платежная карта Mastercard — теперь все в одном месте.
+			</p>
+			<div class="intro__registratin">
+				<input class="intro__phone input" type="tel" name="intro-registration" placeholder="+7 ___-___-__-__">
+				<button class="intro__button button button--white" type="submit">Регистрация</button>
+			</div>
+			<div class="intro__markets intro__markets--tablet">
+				<a href="#" class="intro__market-link">
+					<svg class="intro__markets-icon" width="28" height="33">
+						<use xlink:href="img/sprite-mono.svg#apple-icon"></use>
+					</svg>
+					<div class="intro__market-link-text">
+						<span class="intro__markets-text">Скачать в</span>
+						<b class="intro__markets-text-bold">App Store</b>
+					</div>
+				</a>
+				<a href="#" class="intro__market-link">
+					<svg class="intro__markets-icon" width="28" height="33">
+						<use xlink:href="img/sprite-mono.svg#google-play-icon"></use>
+					</svg>
+					<div class="intro__market-link-text">
+						<span class="intro__markets-text">Скачать в</span>
+						<b class="intro__markets-text-bold">Google Play</b>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="intro__img-wrapper">
+			<h2 class="intro__img-title">
+			Наше приложение
+		</h2>
+			<picture class="">
+				<source
+						media="(min-width: 0)"
+						srcset="img/our_app.webp 1x,
+										img/our_app@2x.webp 2x">
+				<img
+						class="intro__img"
+						src="img/our_app.png"
+						srcset="img/our_app.png 1x,
+									img/our_app.png@2x.png 2x"
+						alt="Нашпе приложение"
+						width="401"
+						height="485">
+			</picture>
+			<div class="intro__markets intro__markets--mobile">
+				<a href="#"  class="intro__market-link">
+					<svg class="intro__markets-icon" width="28" height="33">
+						<use xlink:href="img/sprite-mono.svg#apple-store-icon"></use>
+					</svg>
+					<div class="intro__market-link-text">
+						<span class="intro__markets-text">Скачать в</span>
+						<b class="intro__markets-text-bold">App Store</b>
+					</div>
+				</a>
+				<a href="#"  class="intro__market-link">
+					<svg class="intro__markets-icon" width="28" height="33">
+						<use xlink:href="img/sprite-mono.svg#google-play-icon"></use>
+					</svg>
+					<div class="intro__market-link-text">
+						<span class="intro__markets-text">Скачать в</span>
+						<b class="intro__markets-text-bold">Google Play</b>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<ul class="intro__functions">
+		<li class="intro__function">
+			<div class="intro__function-ico-wrapper">
+				<svg class="intro__function-icon" width="33" height="33">
+					<use xlink:href="img/sprite-mono.svg#electronic-transfers"></use>
+				</svg>
+			</div>
+			<div class="intro__function-text-wrapper">
+				<h3 class="intro__function-title">Электронный кошелёк</h3>
+				<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
+			</div>
+		</li>
+		<li class="intro__function">
+			<div class="intro__function-ico-wrapper">
+				<svg class="intro__function-icon" width="31" height="31">
+					<use xlink:href="img/sprite-mono.svg#money-transfers"></use>
+				</svg>
+			</div>
+			<div class="intro__function-text-wrapper">
+				<h3 class="intro__function-title">Денежные переводы</h3>
+				<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
+			</div>
+		</li>
+		<li class="intro__function">
+			<div class="intro__function-ico-wrapper">
+				<svg class="intro__function-icon" width="33" height="33">
+					<use xlink:href="img/sprite-mono.svg#payment"></use>
+				</svg>
+			</div>
+			<div class="intro__function-text-wrapper">
+				<h3 class="intro__function-title">Оплата товаров и услуг</h3>
+				<p class="intro__function-description">Lorem ipsum dolor sit amet</p>
+			</div>
+		</li>
+	</ul>
+</section>
+
+{# <script>
+	document.addEventListener("DOMContentLoaded", function () {
+		var phoneInputs = document.querySelectorAll('input[data-tel-input]');
+
+		var getInputNumbersValue = function (input) {
+			// Return stripped input value — just numbers
+			return input
+				.value
+				.replace(/\D/g, '');
+		}
+
+		var onPhonePaste = function (e) {
+			var input = e.target,
+				inputNumbersValue = getInputNumbersValue(input);
+			var pasted = e.clipboardData || window.clipboardData;
+			if (pasted) {
+				var pastedText = pasted.getData('Text');
+				if (/\D/g.test(pastedText)) {
+					// Attempt to paste non-numeric symbol — remove all non-numeric symbols,
+					// formatting will be in onPhoneInput handler
+					input.value = inputNumbersValue;
+					return;
+				}
+			}
+		}
+
+		var onPhoneInput = function (e) {
+			var input = e.target,
+				inputNumbersValue = getInputNumbersValue(input),
+				selectionStart = input.selectionStart,
+				formattedInputValue = "";
+
+			if (!inputNumbersValue) {
+				return input.value = "";
+			}
+
+			if (input.value.length != selectionStart) {
+				// Editing in the middle of input, not last symbol
+				if (e.data && /\D/g.test(e.data)) {
+					// Attempt to input non-numeric symbol
+					input.value = inputNumbersValue;
+				}
+				return;
+			}
+
+			if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
+				if (inputNumbersValue[0] == "9") 
+					inputNumbersValue = "7" + inputNumbersValue;
+				var firstSymbols = (inputNumbersValue[0] == "8")
+					? "8"
+					: "+7";
+				if (inputNumbersValue.length > 1) {
+					formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+				}
+				if (inputNumbersValue.length >= 5) {
+					formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+				}
+				if (inputNumbersValue.length >= 8) {
+					formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+				}
+				if (inputNumbersValue.length >= 10) {
+					formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+				}
+			} else {
+				formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
+			}
+			input.value = formattedInputValue;
+		}
+		var onPhoneKeyDown = function (e) {
+			// Clear input after remove last symbol
+			var inputValue = e
+				.target
+				.value
+				.replace(/\D/g, '');
+			if (e.keyCode == 8 && inputValue.length == 1) {
+				e.target.value = "";
+			}
+		}
+		for (var phoneInput of phoneInputs) {
+			phoneInput.addEventListener('keydown', onPhoneKeyDown);
+			phoneInput.addEventListener('input', onPhoneInput, false);
+			phoneInput.addEventListener('paste', onPhonePaste, false);
+		}
+	})
+</script>
+
+<!-- Optional cosmetic CSS -->
+<style type="text/css">
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	body {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-items: center;
+	}
+	input {
+		font-size: 30px;
+		padding: 15px;
+		border: 1px solid #ccc;
+		min-width: 300px;
+		max-width: 400px;
+		width: 90%;
+	}
+	input:focus {
+		outline: none;
+	}
+	.placeholder {
+		flex: 1;
+	}
+</style>
+
+<!-- Optional cosmetic JS -->
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+		document
+			.querySelector('input')
+			.focus();
+	})
+</script>
+
+<div class="placeholder"></div>
+<input type="tel" data-tel-input placeholder="Телефон" maxlength="18"/>
+<div class="placeholder"></div> #}

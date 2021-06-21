@@ -1,0 +1,239 @@
+@import "../../../node_modules/normalize.css/normalize";
+@import "variables";
+@import "mixins.scss";
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+
+@include font-face("Montserrat", "../fonts/montserrat", 400, "normal");
+@include font-face("Montserrat", "../fonts/montserrat", 500, "normal");
+@include font-face("Montserrat", "../fonts/montserrat", 600, "normal");
+@include font-face("Montserrat", "../fonts/montserrat", 700, "normal");
+@include font-face("Montserrat", "../fonts/montserrat", 800, "normal");
+@include font-face("Montserrat", "../fonts/montserrat", 900, "normal");
+
+body {
+	min-width: 320px;
+
+	color: $cod-gray;
+
+	background-color: $white-2;
+
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 140%;
+
+	mix-blend-mode: normal;
+}
+
+picture {
+	display: block;
+
+	line-height: 0;
+}
+
+img {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.section-title {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 103.5%;
+
+	color: $port-gore;
+
+	@include media-tablet {
+		font-size: 46px;
+	}
+}
+
+.input {
+	box-sizing: border-box;
+	padding: 12px 30px;
+
+	color: $gallery;
+	border: 1px solid $gallery;
+	border-radius: 15px;
+	background-color: transparent;
+
+	font-family: "Montserrat";
+	font-size: 16px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 140%;
+
+	&:focus {
+		border: solid 1px $dodger-blue;
+	}
+
+	&:invalid {
+		border: solid 1px $red;
+	}
+	&::placeholder {
+		color: $gallery;
+	}
+}
+
+.input--grey {
+	border: 1px solid rgba($nepal, 0.5);
+	color: $amethyst-smoke;
+	&::placeholder {
+		color: $amethyst-smoke;
+	}
+}
+
+.button {
+	box-sizing: border-box;
+	padding: 12px 30px;
+
+	cursor: pointer;
+	text-align: center;
+
+	color: $white;
+	border: 0;
+
+	border: 2px solid $white;
+	border-radius: 15px;
+
+	font-family: "Montserrat";
+	font-size: 15px;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 18px;
+
+	&:focus,
+	&:hover {
+		color: $port-gore;
+		background-color: $white;
+	}
+
+	&:active {
+		background-color: $seashell;
+	}
+
+	&:disabled {
+		background: rgba($amethyst-smoke, 0.45);
+	}
+}
+
+.button--white {
+	color: $haiti;
+
+	background-color: $white;
+
+	&:focus,
+	&:hover {
+		border-color: transparent;
+		background-color: $mischka;
+	}
+
+	&:active {
+		background-color: $onahau;
+	}
+
+	&:disabled {
+		background: rgba($amethyst-smoke, 0.45);
+	}
+}
+
+.button--blue {
+	color: $white;
+
+	background-color: $dodger-blue;
+
+	&:focus,
+	&:hover {
+		background-color: $cerulean;
+		color: $white;
+	}
+
+	&:active {
+		background-color: $malibu;
+	}
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+	position: absolute;
+
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+
+	white-space: nowrap;
+
+	border: 0;
+
+	clip-path: inset(100%);
+}
+
+/*
+swiper.js
+*/
+.swiper-container {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+.swiper-container-vertical > .swiper-wrapper {
+	flex-direction: column;
+}
+.swiper-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: flex;
+	transition-property: transform;
+	box-sizing: content-box;
+}
+.swiper-container-android .swiper-slide,
+.swiper-wrapper {
+	transform: translate3d(0px, 0, 0);
+}
+.swiper-container-multirow > .swiper-wrapper {
+	flex-wrap: wrap;
+}
+.swiper-container-multirow-column > .swiper-wrapper {
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+.swiper-container-free-mode > .swiper-wrapper {
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-container-pointer-events {
+	touch-action: pan-y;
+}
+.swiper-container-pointer-events.swiper-container-vertical {
+	touch-action: pan-x;
+}
+.swiper-slide {
+	flex-shrink: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transition-property: transform;
+}
+.swiper-slide-invisible-blank {
+	visibility: hidden;
+}
+/*
+end swiper.js
+*/

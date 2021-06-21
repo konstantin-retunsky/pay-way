@@ -1,0 +1,83 @@
+.lang-switcher {
+	position: relative;
+
+	display: flex;
+
+	margin-right: 26px;
+}
+
+.lang-switcher__list-wrapper {
+	padding-top: 36px;
+}
+
+.lang-switcher__list {
+	position: absolute;
+	z-index: 1;
+	background-color: $white;
+	box-shadow: 0px 0px 8px rgba($black, 0.08);
+	border-radius: 15px;
+	right: 1px;
+	padding: 8px;
+
+	display: none;
+}
+
+.lang-switcher__list-item-first {
+	margin-bottom: 15px;
+}
+
+
+.lang-switcher__button {
+	display: flex;
+	align-items: center;
+
+	padding: 0;
+
+	cursor: pointer;
+
+	border: 0;
+	background-color: transparent;
+
+	&:hover,
+	&:focus {
+			opacity: 0.8;
+	}
+
+	&:active {
+		opacity: 0.6;
+	}
+}
+
+.lang-switcher:hover .lang-switcher__list {
+	display: block;
+}
+
+.lang-switcher:hover .lang-switcher__ico-arrow {
+	transform: rotate(180deg);
+}
+
+.lang-switcher__ico-arrow {
+	fill: $white;
+
+	transition: transform 0.2s;
+}
+
+.lang-switcher__ico-lang {
+	margin-right: 6px;
+
+	border-radius: 50%;
+}
+
+.lang-switcher__text {
+	margin-right: 5px;
+
+	color: $white;
+
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 18px;
+}
+
+.lang-switcher__list-item .lang-switcher__text{
+	color: $port-gore;
+}

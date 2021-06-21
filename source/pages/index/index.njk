@@ -1,0 +1,13 @@
+{% extends "global/page/layout.njk" %}
+{% set metaDescription = "Главная страница" %}
+{% set title = "Главная страница Sedona" %}
+{% set currentPage = "index.html" %}
+{% set classPage = "index-page" %}
+
+{% block content %}
+	<main class="main">
+		{% include "blocks/intro/intro.njk" %}
+		{% include "blocks/transfers-to-card/transfers-to-card.njk" %}
+{% include "blocks/public-services/public-services.njk" %}
+	</main>
+{% endblock %}

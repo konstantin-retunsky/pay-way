@@ -1,0 +1,77 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+{% import "blocks/slider/slider.njk" as slider %}
+
+{%
+	set dataSlider = {
+		images: [
+			{
+				width: 127,
+				height: 36,
+				src: "sberbank"
+			},
+			{
+				width: 116,
+				height: 74,
+				src: "tinkof"
+			},
+			{
+				width: 148,
+				height: 61,
+				src: "alfabank"
+			},
+			{
+				width: 107,
+				height: 107,
+				src: "agrobank"
+			},
+			{
+				width: 101,
+				height: 101,
+				src: "ipotekabank"
+			},
+			{
+				width: 111,
+				height: 111,
+				src: "trastbank"
+			},
+			{
+				width: 127,
+				height: 36,
+				src: "sberbank"
+			},
+			{
+				width: 127,
+				height: 36,
+				src: "sberbank"
+			},
+			{
+				width: 127,
+				height: 36,
+				src: "sberbank"
+			}
+		],
+		classSlider: "transfer-to-card__slider"
+	}
+%}
+
+<section class="transfer-to-card">
+	<h2 class="transfer-to-card__title section-title">
+		Переводы<br>
+		с карты на карту	
+	</h2>
+	<div class="transfer-to-card__amount-wrapper">
+		<input class="transfer-to-card__amount" type="text" pattern="^[0-9]+$" value="0">
+		<b class="transfer-to-card__amount-text-bold">Введите сумму перевода</b>
+		<p class="transfer-to-card__amount-text">*Стоимость услуги 1% от суммы перевода</p>
+
+	</div>
+	<div class="transfer-to-card__cards-wrapper">
+		<div class="transfer-to-card__card-from-wrapper">
+			<input class="transfer-to-card__card-from input input--grey" name="card-from" type="text" placeholder="Номер карты отправителя">
+			<input class="transfer-to-card__card-from-date input input--grey" name="card-from-date" type="text" placeholder="ММ/ГГ">
+		</div>
+		<input class="transfer-to-card__card-to input input--grey" type="text" placeholder="Номер карты получателя">
+		<button class="transfer-to-card__button button button--blue" type="submit">Перевести</button>
+	</div>
+	{{slider.value(dataSlider)}}
+</section>

@@ -1,0 +1,29 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+<div class="lang-switcher">
+	<button class="lang-switcher__button lang-switcher__selected"  value="ru">
+		<svg class="lang-switcher__ico-lang" width="20" height="20">
+			<use xlink:href="img/sprite-multi.svg#lang-icon-ru"></use>
+		</svg>
+		<span class="lang-switcher__text">RU</span>
+		<svg class="lang-switcher__ico-arrow" width="10" height="6">
+			<use xlink:href="img/sprite-mono.svg#arrow-bottom"></use>
+		</svg>
+	</button>
+	<div class="lang-switcher__list-wrapper">
+		<div class="lang-switcher__list">
+			<button class="lang-switcher__button lang-switcher__list-item lang-switcher__list-item-first" value="uz">
+				<svg class="lang-switcher__ico-lang" width="20" height="20">
+					<use xlink:href="img/sprite-multi.svg#lang-icon-uz"></use>
+				</svg>
+				<span class="lang-switcher__text">UZ</span>
+			</button>
+			<button class="lang-switcher__button lang-switcher__list-item" value="us">
+				<svg class="lang-switcher__ico-lang" width="20" height="20">
+					<use xlink:href="img/sprite-multi.svg#lang-icon-us"></use>
+				</svg>
+				<span class="lang-switcher__text">US</span>
+			</button>
+		</div>
+	</div>
+</div>

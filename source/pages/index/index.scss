@@ -1,0 +1,13 @@
+@import "../../global/scss/variables.scss";
+@import "../../global/scss/mixins.scss";
+@import "../../blocks/intro/intro.scss";
+@import "../../blocks/transfers-to-card/transfers-to-card.scss";
+
+.main {
+	padding-top: 75px;
+
+	@include media-tablet {
+		padding-top: 90px;	
+	}
+}
+@import "../../blocks/public-services/public-services.scss";
