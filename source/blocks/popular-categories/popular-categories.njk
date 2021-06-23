@@ -1,0 +1,116 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+{% import "../../blocks/slider/slider.njk" as slider %}
+
+{%
+	set data = {
+		class: "popular-categories",
+		title: {
+			class: "popular-categories__title section-title section-title--white",
+			text: "Популярные категории"
+		},
+		text: {
+			class: "popular-categories__text section-text",
+			text: "- это современный платежный инструмент, позволяющий удобно и безопасно использовать возможности сервиса PAY WAY для оплаты товаров, услуг и совершения переводов.",
+			bold: {
+				text: "PAY WAY ",
+				class: "popular-categories__text-bold section-text section-text--bold"
+			}
+		},
+		link: {
+			href: "#",
+			class: "popular-categories__link button button--blue",
+			text: "Весь список услуг"
+		},	
+		linkDesktopMedia: {
+			href: "#",
+			class: "popular-categories__link-desktop button button--blue",
+			text: "Весь список услуг"
+		},
+		img: {
+			class: "popular-categories__img",
+			width: 600,
+			height: 433,
+			src: "img/popular-categories",
+			alt: "Изображение сайта на планшете",
+			media: ["1100px", '320px'],
+			type: 'raster'
+		},
+		slider: {
+			class: "popular-categories__slider",
+			type: "vertical",
+			items: [
+				{
+					iconWrapper: {
+						width: 35,
+						height: 35,
+						svgName: "electric-power"
+					},
+					type: "vector",
+					text: "Электроэнергия"
+				},
+				{
+					iconWrapper: {
+						width: 35,
+						height: 35,
+						svgName: "payment-taxes"
+					},
+					type: "vector",
+					text: "Оплата налогов"
+				},
+				{
+					iconWrapper: {
+						width: 35,
+						height: 35,
+						svgName: "traffic-police-fines"
+					},
+					type: "vector",
+					text: "Штрафы ГИБДД"
+				},
+				{
+					iconWrapper: {
+						width: 35,
+						height: 35,
+						svgName: "traffic-police-fines"
+					},
+					text: "Штрафы ГИБДД",
+					type: "vector"
+				},
+				{
+					iconWrapper: {
+						width: 35,
+						height: 35,
+						svgName: "traffic-police-fines"
+					},
+					type: "vector",
+					text: "Штрафы ГИБДД"
+				}
+			]
+		}
+	}
+%}
+
+<section class="{{ data.class }}">
+	<div class="container">
+		<div class="popular-categories__text-wrapper">
+			<h2 class="{{ data.title.class }}">
+				{{ data.title.text }}
+				<span class="{{ data.title.text.bold.class }}">
+					{{ data.title.text.bold.text }}
+				</span>
+			</h2>
+			<p class="{{ data.text.class }}">
+				{{ data.text.text }}
+			</p>
+			<a class="{{data.linkDesktopMedia.class}}" href="{{data.linkDesktopMedia.href}}">
+				{{data.linkDesktopMedia.text}}
+			</a>
+		</div>
+		<div class="popular-categories__img-wrapper">
+			{{mixins.img(data.img)}}
+			{{slider.value(data.slider)}}
+		</div>
+		<a class="{{data.link.class}}" href="{{data.link.href}}">
+			{{data.link.text}}
+		</a>
+	</div>
+</section>

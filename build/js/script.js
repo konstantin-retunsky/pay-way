@@ -2,12 +2,6 @@
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function getDirection() {
-  var windowWidth = window.innerWidth;
-  var direction = window.innerWidth <= 760 ? "vertical" : "horizontal";
-  return direction;
-}
-
 (function (global, factory) {
   (typeof exports === "undefined" ? "undefined" : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Swiper = factory());
 })(void 0, function () {
@@ -9858,33 +9852,24 @@ window.addEventListener("scroll", function () {
   }
 
   lastScroll = currentScroll;
-}); // const buttonsSwitch = document.querySelectorAll(".lang-switcher__button");
-// if (buttonsSwitch) {
-// 	buttonsSwitch.forEach((btn) => {
-// 		btn.addEventListener("click", (e) => {
-// 			const selectedLang = document.querySelector(".lang-switcher__selected");
-// 			const cloneSelectedLang = selectedLang.cloneNode(true);
-// 			if (selectedLang) {
-// 				selectedLang.replaceChild(
-// 					btn.querySelector(".lang-switcher__ico-lang").cloneNode(true),
-// 					selectedLang.querySelector(".lang-switcher__ico-lang")
-// 				);
-// 				selectedLang.replaceChild(
-// 					btn.querySelector(".lang-switcher__text").cloneNode(true),
-// 					selectedLang.querySelector(".lang-switcher__text")
-// 				);
-// 				btn.replaceChild(
-// 					cloneSelectedLang.querySelector(".lang-switcher__text"),
-// 					btn.querySelector(".lang-switcher__text")
-// 				);
-// 				btn.replaceChild(
-// 					cloneSelectedLang.querySelector(".lang-switcher__ico-lang"),
-// 					btn.querySelector(".lang-switcher__ico-lang")
-// 				);
-// 			}
-// 		});
-// 	});
-// }
+});
+var buttonsSwitch = document.querySelectorAll(".lang-switcher__button");
+
+if (buttonsSwitch) {
+  buttonsSwitch.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      var selectedLang = document.querySelector(".lang-switcher__selected");
+      var cloneSelectedLang = selectedLang.cloneNode(true);
+
+      if (selectedLang) {
+        selectedLang.replaceChild(btn.querySelector(".lang-switcher__ico-lang").cloneNode(true), selectedLang.querySelector(".lang-switcher__ico-lang"));
+        selectedLang.replaceChild(btn.querySelector(".lang-switcher__text").cloneNode(true), selectedLang.querySelector(".lang-switcher__text"));
+        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__text"), btn.querySelector(".lang-switcher__text"));
+        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__ico-lang"), btn.querySelector(".lang-switcher__ico-lang"));
+      }
+    });
+  });
+}
 
 var navToggle = document.querySelector(".header__menu-toggle");
 var links = document.querySelectorAll(".navigation__link");
@@ -9920,6 +9905,49 @@ var swiper = new Swiper(".payment-loans .swiper-container", {
   // },
 
 });
+var buttonsPaymentMobile = document.querySelectorAll(".payment-mobile__switcher-button");
+
+if (buttonsPaymentMobile) {
+  buttonsPaymentMobile.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      var fisrtElement = document.querySelectorAll(".payment-mobile__switcher-button")[0];
+      var cloneFirstElement = fisrtElement.cloneNode(true);
+      fisrtElement.innerHTML = this.innerHTML;
+      this.innerHTML = cloneFirstElement.innerHTML;
+    });
+  });
+}
+
+var paymentMobileSwitcher = document.querySelector(".payment-mobile__switcher-list");
+var paymentMobileWrapper = document.querySelector(".payment-mobile__switcher-list-wrapper");
+
+if (paymentMobileSwitcher && paymentMobileWrapper) {
+  paymentMobileSwitcher.addEventListener("mouseenter", function (e) {
+    paymentMobileWrapper.style.width = "".concat(this.offsetWidth, "px");
+  });
+  paymentMobileSwitcher.addEventListener("mouseleave", function (e) {
+    paymentMobileWrapper.style.width = "auto";
+  });
+}
+
+var popularCategories = new Swiper(".popular-categories .swiper-container", {
+  slidesPerView: "auto",
+  direction: getDirectionCategories(),
+  navigation: {
+    nextEl: ".popular-categories .slider__button--next",
+    prevEl: ".popular-categories .slider__button--prev"
+  },
+  on: {
+    resize: function resize() {
+      this.changeDirection(getDirectionCategories());
+    }
+  }
+});
+
+function getDirectionCategories() {
+  return window.innerWidth <= 1100 ? "vertical" : "horizontal";
+}
+
 var swiperTransferCard = new Swiper(".transfer-to-card .swiper-container", {
   slidesPerView: "auto",
   // direction: getDirection(),

@@ -1,14 +1,24 @@
 {% import "../../global/page/mixins.njk" as mixins %}
+{% import "../../blocks/round-icon-wrapper/round-icon-wrapper.njk" as iconWrapper %}
 
 {% macro value(args) %}
-	<div class="slider {{args.class}}">
-		<div class=" swiper-container">
+	{% if args.type == "vertical" %}
+		<div class="slider slider--vertical {{args.class}}">
+	{% else %}
+		<div class="slider {{args.class}}">
+	{% endif %}
+		<div class="swiper-container">
 			<ul class="slider__list swiper-wrapper">
-				{% for img in args.images %}
+				{% for item in args.items %}
 					<li class="slider__item swiper-slide">
-						<a class="slider__link" href="#">
-							<img src="img/{{img.src}}.webp" width="{{img.width}}" height="{{img.height}}" alt="Логотип банка">
-						</a>
+						{% if item.type == "vector" %}
+							{{iconWrapper.value(item.iconWrapper)}}
+							<span class="slider__item__item-text">
+								{{item.text}}
+							</span>
+						{% else %}
+							<img src="img/{{item.src}}.webp" width="{{item.width}}" height="{{item.height}}" alt="Логотип банка">
+						{% endif %}
 					</li>
 				{% endfor %}
 			</ul>

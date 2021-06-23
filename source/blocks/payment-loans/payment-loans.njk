@@ -10,7 +10,7 @@
 		},
 		slider: {
 			class: "payment-loans__slider",
-			images: [
+			items: [
 				{
 					width: 153,
 					height: 74,
@@ -57,8 +57,10 @@
 %}
 
 <section class="{{ data.class }}">
-	<h2 class="{{ data.title.class }}">
-		{{ data.title.text }}
-	</h2>
-	{{slider.value(data.slider)}}
+	<div class="container">
+		<h2 class="{{ data.title.class }}">
+			{{ data.title.text }}
+		</h2>
+		{{slider.value(data.slider)}}
+	</div>
 </section>
