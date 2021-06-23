@@ -1,6 +1,160 @@
 {% import "../../global/page/mixins.njk" as mixins %}
 
+{%
+	set data = {
+		class: "footer",
+		logo: {
+			sprite: {
+				class: "footer__logo-icon",
+				width: 190,
+				height: 76,
+				name:	"logo-desktop" 
+			},
+			class: "footer__logo"
+		},
+		contacts: {
+			class: "footer__contacts",
+			title: {
+				text: "Контакты",
+				class: "footer__contacts-title"
+			},
+			phone: {
+				text: "+998 ",
+				class: "footer__contacts-phone",
+				bold: {
+					text: "71 200‑02‑05",
+					class: "footer__contacts-phone-bold"
+				}
+			},
+			mail: {
+				text: "info-email@gmail.com",
+				class: "footer__contacts-mail",
+				input: {
+					class: "footer__mail-input input",
+					text: "Email",
+					sprite: {
+						class: "footer__contacts-mail-icon",
+						width: 24,
+						height: 24,
+						name:	"arrow-email" 
+					}
+				}
+			}
+		},
+		desktopText: {
+			text: "Онлайн-платежи в популярных валютах, включая USD и EUR, переводы SWIFT и SEPA, онлайн-конвертация",
+			class: "footer__deskto-text"
+		},
+		privacyPolicy: {
+			class: "footer__privacy-policy",
+			text: "Политика конфиденциальности"
+		},
+		menu: {
+			title: {
+				class: "footer__menu-title",
+				text: "Меню"
+			},
+			items: [
+				"Главная",
+				"Переводы",
+				"Оплата",
+				"Помощь"
+			]
+		},
+		links: {
+			title: {
+				class: "footer__menu-title",
+				text: "Ссылки"
+			},
+			items: [
+				"Регистрация",
+				"Вход",
+				"Политика конфиденциальности"
+			]
+		}
+	}
+%}
 
+<footer class="{{ data.class }}">
 
-<footer class="footer">
+	<div class="container">
+
+		<div class="footer__left-wrapper">
+			<a class="{{data.logo.class}}" href="index.html">
+				{{mixins.sprite(data.logo.sprite)}}
+			</a>
+
+			<p class="{{data.desktopText.class}}">
+				{{data.desktopText.text}}
+			</p>
+
+			<a class="{{data.contacts.phone.class}}" href="tel: {{data.contacts.phone.text}}{{data.contacts.phone.bold.text}}">
+				{{data.contacts.phone.text}}
+				<span class="{{data.contacts.phone.bold.class}}">
+					{{data.contacts.phone.bold.text}}
+				</span>
+			</a>
+			<a class="{{data.contacts.mail.class}}" href="mailto: {{data.contacts.mail.text}}">
+				{{data.contacts.mail.text}}
+			</a>
+
+			{% include "blocks/social-list/social-list.njk" %}
+
+			<a class="{{data.privacyPolicy.class}}" href="#">
+				{{data.privacyPolicy.text}}
+			</a>
+
+		</div>
+
+		<div class="footer__wrapper-list">
+			<b class="{{data.menu.title.class}}">
+				{{data.menu.title.text}}
+			</b>
+			<ul class="footer__list">
+				{% for item in data.menu.items %}
+					<li class="footer__list-item">
+						<a href="#">
+							{{item}}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div class="footer__wrapper-list">
+			<b class="{{data.links.title.class}}">
+				{{data.links.title.text}}
+			</b>
+			<ul class="footer__list">
+				{% for item in data.links.items %}
+					<li class="footer__list-item">
+						<a href="#">
+							{{item}}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div class="{{data.contacts.class}}">
+			<b class="{{data.contacts.title.class}}">
+				{{data.contacts.title.text}}
+			</b>
+			<a class="{{data.contacts.phone.class}}" href="tel: {{data.contacts.phone.text}}{{data.contacts.phone.bold.text}}">
+				{{data.contacts.phone.text}}
+				<span class="{{data.contacts.phone.bold.class}}">
+					{{data.contacts.phone.bold.text}}
+				</span>
+			</a>
+			<a class="{{data.contacts.mail.class}}" href="mailto: {{data.contacts.mail.text}}">
+				{{data.contacts.mail.text}}
+			</a>
+			<div class="footer__input-mail-wrapper">
+				<input class="{{data.contacts.mail.input.class}}" type="mail" placeholder="{{data.contacts.mail.input.text}}">
+				<button class="footer__input-icon-wrapper" type="submit">
+					{{mixins.sprite(data.contacts.mail.input.sprite)}}
+				</button>
+			</div>
+		</div>
+	</div>
 </footer>

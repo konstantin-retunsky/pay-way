@@ -8,9 +8,10 @@
 	@media (min-width: 1100px) {
 		display: flex;
 		flex-direction: row-reverse;
-		padding-bottom: 0;
-		padding-top: 100px;
 		justify-content: space-between;
+
+		padding-top: 100px;
+		padding-bottom: 0;
 	}
 }
 
@@ -24,6 +25,7 @@
 
 .popular-categories__link {
 	display: block;
+
 	max-width: 388px;
 	margin-top: 65px;
 
@@ -31,36 +33,42 @@
 		margin: 0 auto;
 		margin-top: 65px;
 	}
+
 	@media (min-width: 1100px) {
-		display: none;	
+		display: none;
 	}
 }
 
-
 .popular-categories__link-desktop {
 	display: none;
+
 	@media (min-width: 1100px) {
 		display: block;
-		max-width: auto;	
+
+		max-width: auto;
 		margin-top: 40px;
 	}
 }
 
 .popular-categories__text-wrapper {
 	margin-bottom: 40px;
+
 	@media (min-width: 890px) {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
+		flex-direction: column;
+
 		text-align: center;
 	}
 
 	@media (min-width: 1100px) {
 		align-items: flex-start;
-		text-align: left;
+
 		width: max-content;
-		max-width: 470px;	
+		max-width: 470px;
 		margin-left: 70px;
+
+		text-align: left;
 	}
 }
 
@@ -73,20 +81,21 @@
 
 .popular-categories__img-wrapper {
 	display: flex;
-	justify-content: space-around;
 	align-items: center;
+	justify-content: space-around;
+
 	@media (min-width: 1100px) {
 		flex-direction: column-reverse;
 	}
 }
 
 .popular-categories__img {
-	object-fit: cover;
-	height: 433px;
-	object-position: right;
 	position: relative;
 	left: -57px;
 
+	height: 433px;
+	object-fit: cover;
+	object-position: right;
 
 	@media (min-width: 890px) {
 		left: auto;

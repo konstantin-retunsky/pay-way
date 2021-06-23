@@ -9,8 +9,8 @@
 
 .download-our-app .container {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	flex-direction: column;
 
 	@media (min-width: 832px) {
 		display: flex;
@@ -85,7 +85,6 @@
 	&::after {
 		position: absolute;
 		left: 50%;
-		transform: translate(-50%, -50%);
 
 		display: block;
 
@@ -93,6 +92,7 @@
 		height: 380px;
 
 		content: "";
+		transform: translate(-50%, -50%);
 
 		border-radius: 50%;
 		background: $dodger-blue;
@@ -116,7 +116,7 @@
 	margin-bottom: 80px;
 
 	@media (min-width: 830px) {
-		max-width: 481px;	
+		max-width: 481px;
 	}
 }
 
