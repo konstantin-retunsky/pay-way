@@ -1,15 +1,18 @@
 @import "../../global/scss/variables.scss";
 @import "../../global/scss/mixins.scss";
+@import "../../blocks/switcher/switcher.scss";
 @import "../../blocks/round-icon-wrapper/round-icon-wrapper.scss";
 @import "../../blocks/intro/intro.scss";
 @import "../../blocks/transfers-to-card/transfers-to-card.scss";
 @import "../../blocks/public-services/public-services.scss";
+@import "../../blocks/payment-loans/payment-loans.scss";
+@import "../../blocks/e-wallet/e-wallet.scss";
+@import "../../blocks/payment-mobile/payment-mobile.scss";
 
 .main {
 	padding-top: 75px;
 
 	@include media-tablet {
-		padding-top: 90px;	
+		padding-top: 90px;
 	}
 }
-@import "../../blocks/payment-loans/payment-loans.scss";

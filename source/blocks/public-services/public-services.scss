@@ -3,9 +3,10 @@
 }
 
 .public-services .container {
+	overflow-x: hidden;
+
 	padding: 85px 4%;
 	padding-right: 0;
-	overflow-x: hidden;
 
 	@media (min-width: 860px) {
 		padding: 85px 4%;
@@ -13,63 +14,57 @@
 
 	@include media-desktop {
 		display: flex;
-		padding-bottom: 0;
-		padding-top: 100px;
 		justify-content: space-between;
+
+		padding-top: 100px;
+		padding-bottom: 0;
 	}
 }
 
 .public-services__title {
-	margin: 0;
 	margin-bottom: 10px;
+
 	@include media-tablet {
 		margin-bottom: 20px;
 	}
 }
 
 .public-services__description {
-	margin: 0;
 	margin-bottom: 40px;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 120%;
-
-	color: rgba($white, 0.9);
-
-	@include media-tablet {
-		font-size: 16px;
-		line-height: 140%;
-	}
 }
 
 .public-services__wrapper {
 	display: flex;
 	justify-content: space-between;
+
 	margin-bottom: 65px;
 
 	@include media-desktop {
-	margin-bottom: 0px;
 		flex-direction: column;
+
+		margin-bottom: 0;
 	}
 }
 
 .public-services__list {
-	list-style: none;
 	margin: 0;
-	padding: 0;
 	margin-right: 37px;
+	padding: 0;
+
+	list-style: none;
 
 	@include media-desktop {
 		display: flex;
-		margin-right: 0;
 		justify-content: space-between;
+
+		margin-right: 0;
 	}
 }
 
 .public-services__item {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	flex-direction: column;
 
 	&:not(:last-child) {
 		margin-bottom: 50px;
@@ -81,19 +76,21 @@
 }
 
 .public-services__item-text {
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 103.5%;
-
 	color: $white;
+
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 103.5%;
 }
 
 .public-services__img {
+	overflow-x: hidden;
+
 	height: 432px;
+
+	background-position: center;
 	object-fit: cover;
 	object-position: left;
-	overflow-x: hidden;
-	background-position: center;
 
 	@media (min-width: 1200px) {
 		width: 642px;
@@ -103,17 +100,21 @@
 
 .public-services__link-mobile {
 	display: block;
+
 	max-width: 388px;
 	margin-right: 4%;
+
 	@include media-desktop {
 		display: none;
-	}
-}
-.public-services__link-desktop {
-		display: none;
-	@include media-desktop {
-	max-width: 209px;
-	display: block;
 	}
 }
 
+.public-services__link-desktop {
+	display: none;
+
+	@include media-desktop {
+		display: block;
+
+		max-width: 209px;
+	}
+}

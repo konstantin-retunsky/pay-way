@@ -3,12 +3,14 @@
 
 .header {
 	position: fixed;
+	z-index: 3;
 	top: 0;
-	left: 0;
 	right: 0;
-	z-index: 2;
-	transition: transform 0.4s, background 0.5s;
+	left: 0;
+
 	padding: 8px 0;
+
+	transition: transform 0.4s, background 0.5s;
 
 	background-color: $port-gore;
 
@@ -23,7 +25,7 @@
 
 .header--fixed {
 	background-color: $white-2;
-	box-shadow: 0px 0px 8px rgba($black, 0.08);
+	box-shadow: 0 0 8px rgba($black, 0.08);
 
 	.lang-switcher__text {
 		color: $port-gore;
@@ -58,11 +60,13 @@
 
 	.navigation__privacy-policy {
 		color: rgba($port-gore, 0.5);
+
 		&:focus,
 		&:hover {
 			color: $port-gore;
 		}
 	}
+
 	.navigation__link {
 		color: $port-gore;
 	}
@@ -74,8 +78,8 @@
 
 		&:focus,
 		&:hover {
-			background-color: $cerulean;
 			color: $white;
+			background-color: $cerulean;
 		}
 
 		&:active {
@@ -140,6 +144,7 @@
 
 .header__wrapper {
 	z-index: 2;
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

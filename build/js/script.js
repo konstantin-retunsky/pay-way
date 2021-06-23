@@ -9835,8 +9835,11 @@ var lastScroll = 0;
 var header = document.querySelector(".header");
 var navActive = document.querySelector(".navigation");
 window.addEventListener("scroll", function () {
-  var currentScroll = window.pageYOffset;
-  if (navActive && navActive.classList.contains("navigation--active")) if (currentScroll <= 0) {
+  var currentScroll = window.pageYOffset; // if (nav && nav.contains('navigation--active')) {
+  // 	return;
+  // }
+
+  if (currentScroll <= 30) {
     body.classList.remove(scrollUp);
     header ? header.classList.remove("header--fixed") : 0;
     return;
@@ -9855,24 +9858,33 @@ window.addEventListener("scroll", function () {
   }
 
   lastScroll = currentScroll;
-});
-var buttonsSwitch = document.querySelectorAll(".lang-switcher__button");
-
-if (buttonsSwitch) {
-  buttonsSwitch.forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      var selectedLang = document.querySelector(".lang-switcher__selected");
-      var cloneSelectedLang = selectedLang.cloneNode(true);
-
-      if (selectedLang) {
-        selectedLang.replaceChild(btn.querySelector(".lang-switcher__ico-lang").cloneNode(true), selectedLang.querySelector(".lang-switcher__ico-lang"));
-        selectedLang.replaceChild(btn.querySelector(".lang-switcher__text").cloneNode(true), selectedLang.querySelector(".lang-switcher__text"));
-        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__text"), btn.querySelector(".lang-switcher__text"));
-        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__ico-lang"), btn.querySelector(".lang-switcher__ico-lang"));
-      }
-    });
-  });
-}
+}); // const buttonsSwitch = document.querySelectorAll(".lang-switcher__button");
+// if (buttonsSwitch) {
+// 	buttonsSwitch.forEach((btn) => {
+// 		btn.addEventListener("click", (e) => {
+// 			const selectedLang = document.querySelector(".lang-switcher__selected");
+// 			const cloneSelectedLang = selectedLang.cloneNode(true);
+// 			if (selectedLang) {
+// 				selectedLang.replaceChild(
+// 					btn.querySelector(".lang-switcher__ico-lang").cloneNode(true),
+// 					selectedLang.querySelector(".lang-switcher__ico-lang")
+// 				);
+// 				selectedLang.replaceChild(
+// 					btn.querySelector(".lang-switcher__text").cloneNode(true),
+// 					selectedLang.querySelector(".lang-switcher__text")
+// 				);
+// 				btn.replaceChild(
+// 					cloneSelectedLang.querySelector(".lang-switcher__text"),
+// 					btn.querySelector(".lang-switcher__text")
+// 				);
+// 				btn.replaceChild(
+// 					cloneSelectedLang.querySelector(".lang-switcher__ico-lang"),
+// 					btn.querySelector(".lang-switcher__ico-lang")
+// 				);
+// 			}
+// 		});
+// 	});
+// }
 
 var navToggle = document.querySelector(".header__menu-toggle");
 var links = document.querySelectorAll(".navigation__link");

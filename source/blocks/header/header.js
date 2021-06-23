@@ -8,12 +8,15 @@ const navActive = document.querySelector(".navigation");
 window.addEventListener("scroll", () => {
 	const currentScroll = window.pageYOffset;
 
-	if (navActive && navActive.classList.contains("navigation--active"))
-		if (currentScroll <= 0) {
-			body.classList.remove(scrollUp);
-			header ? header.classList.remove("header--fixed") : 0;
-			return;
-		}
+	// if (nav && nav.contains('navigation--active')) {
+	// 	return;
+	// }
+
+	if (currentScroll <= 30) {
+		body.classList.remove(scrollUp);
+		header ? header.classList.remove("header--fixed") : 0;
+		return;
+	}
 
 	if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
 		body.classList.remove(scrollUp);

@@ -1,0 +1,58 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{%
+	set data = {
+		class: "payment-mobile",
+		title: {
+			class: "payment-mobile__title section-title section-title--gray",
+			text: "Оплата мобильной связи"
+		},
+		switcher: [
+			{
+				value: "tele3",
+				sprite: {
+					width: 50,
+					height: 50,
+					name: "tele2-icon",
+					type: "multi"
+				}
+			},
+			{
+				value: "tele3",
+				sprite: {
+					width: 50,
+					height: 50,
+					name: "tele2-icon",
+					type: "multi"
+				}
+			},
+			{
+				value: "tele4",
+				sprite: {
+					width: 50,
+					height: 50,
+					name: "tele2-icon",
+					type: "multi"
+				}
+			}
+		]
+	}
+%}
+
+<section class="{{data.class}}">
+	<h2 class="{{data.title.class}}">
+		{{data.title.text}}
+	</h2>
+	<ul class="payment-mobile__switcher-list">
+		{% for item in data.switcher %}
+			<li class="payment-mobile__switcher-item">
+				<button class="payment-mobile__switcher-button" value="{{item.value}}">
+					{{mixins.sprite(item.sprite)}}
+					<svg class="payment-mobile__switcher-arrow-icon" width="10" height="6">
+						<use xlink:href="img/sprite-mono.svg#arrow-payment-mobile"></use>
+					</svg>
+				</button>
+			</li>
+		{% endfor %}
+	</ul>
+</section>

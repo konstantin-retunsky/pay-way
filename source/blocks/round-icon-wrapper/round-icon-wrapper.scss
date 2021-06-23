@@ -1,12 +1,14 @@
 .round-icon-wrapper {
 	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	width: 72px;
 	height: 72px;
 	margin-right: 12px;
-	justify-content: center;
-	align-items: center;
-	background-color: rgba(41, 178, 255, 0.1);
+
 	border-radius: 50%;
+	background-color: rgba(41, 178, 255, 0.1);
 }
 
 .round-icon-wrapper-icon {

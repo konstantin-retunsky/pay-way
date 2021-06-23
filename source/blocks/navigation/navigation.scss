@@ -15,19 +15,22 @@
 }
 
 .navigation--active {
-	display: flex;
-	flex-direction: column;
-	z-index: 1;
-	overflow: auto;
 	position: fixed;
+	z-index: 1;
 	top: 0;
-	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: $port-gore;
+	left: 0;
+
+	display: flex;
+	overflow: auto;
+	flex-direction: column;
+
 	padding: 0 4%;
 	padding-top: 97px;
 	padding-bottom: 60px;
+
+	background-color: $port-gore;
 }
 
 .navigation--active .navigation__list {
@@ -122,13 +125,16 @@
 
 .navigation__privacy-policy {
 	display: none;
+
 	margin-top: 45px;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 22px;
+
 	color: rgba($white, 0.5);
 
-	&:focus, 
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 22px;
+
+	&:focus,
 	&:hover {
 		color: $white;
 	}

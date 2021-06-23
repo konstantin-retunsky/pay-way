@@ -13,19 +13,20 @@
 .lang-switcher__list {
 	position: absolute;
 	z-index: 1;
-	background-color: $white;
-	box-shadow: 0px 0px 8px rgba($black, 0.08);
-	border-radius: 15px;
 	right: 1px;
-	padding: 8px;
 
 	display: none;
+
+	padding: 8px;
+
+	border-radius: 15px;
+	background-color: $white;
+	box-shadow: 0 0 8px rgba($black, 0.08);
 }
 
 .lang-switcher__list-item-first {
 	margin-bottom: 15px;
 }
-
 
 .lang-switcher__button {
 	display: flex;
@@ -40,7 +41,7 @@
 
 	&:hover,
 	&:focus {
-			opacity: 0.8;
+		opacity: 0.8;
 	}
 
 	&:active {
@@ -78,6 +79,6 @@
 	line-height: 18px;
 }
 
-.lang-switcher__list-item .lang-switcher__text{
+.lang-switcher__list-item .lang-switcher__text {
 	color: $port-gore;
 }

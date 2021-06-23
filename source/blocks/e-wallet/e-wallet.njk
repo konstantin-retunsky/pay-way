@@ -1,0 +1,57 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{%
+	set data = {
+		class: "e-wallet",
+		title: {
+			class: "e-wallet__title section-title section-title--white"
+		},
+		text: {
+			class: "e-wallet__text section-text",
+			text: "- это современный платежный инструмент, позволяющий удобно и безопасно использовать возможности сервиса Payme для оплаты товаров, услуг и совершения переводов.",
+			boldText: {
+				class: "section-text section-text--bold",
+				text: "PAY WAY "
+			}
+		},
+		link: {
+			class: "e-wallet__link button button--blue",
+			href: "more-detailed.html",
+			text: "Подробнее"
+		},
+		img: {
+			class: "e-wallet__img",
+			width: 372,
+			height: 281,
+			src: "img/e-wallet",
+			alt: "Электронный кошелек PAY WAY",
+			media: ['526px', '320px'],
+			type: 'raster'
+		}
+	}
+%}
+
+<section class="{{ data.class }}">
+	<div class="container">
+		<div class="e-wallet__text-wrapper">
+			<h2 class="{{ data.title.class }}">
+				Электронный <br>
+				кошелек PAY WAY
+			</h2>
+			<p class="{{ data.text.class }}">
+				{{ data.text.text }}
+				<span class="{{ data.text.boldText.class }}">
+					{{ data.text.boldText.text }}
+				</span>
+			</p>
+			<a class="{{ data.link.class}}" href="{{ data.link.href}}">
+				{{ data.link.text}}
+			</a>
+		</div>
+		<div class="e-wallet__img-wrapper">
+			{{
+				mixins.img(data.img)
+			}}
+		</div>
+	</div>
+</section>
