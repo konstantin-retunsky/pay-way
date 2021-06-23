@@ -4,15 +4,14 @@
 	set data = {
 		class: "payment-mobile",
 		title: {
-			class: "payment-mobile__title section-title section-title--gray",
-			text: "Оплата мобильной связи"
+			class: "payment-mobile__title section-title section-title--gray"
 		},
 		switcher: [
 			{
 				value: "tele3",
 				sprite: {
-					width: 50,
-					height: 50,
+					width: 45,
+					height: 45,
 					name: "tele2-icon",
 					type: "multi"
 				}
@@ -20,8 +19,8 @@
 			{
 				value: "tele3",
 				sprite: {
-					width: 50,
-					height: 50,
+					width: 40,
+					height: 40,
 					name: "tele2-icon",
 					type: "multi"
 				}
@@ -41,18 +40,28 @@
 
 <section class="{{data.class}}">
 	<h2 class="{{data.title.class}}">
-		{{data.title.text}}
+		Оплата <br>
+		мобильной связи
 	</h2>
-	<ul class="payment-mobile__switcher-list">
-		{% for item in data.switcher %}
-			<li class="payment-mobile__switcher-item">
-				<button class="payment-mobile__switcher-button" value="{{item.value}}">
-					{{mixins.sprite(item.sprite)}}
-					<svg class="payment-mobile__switcher-arrow-icon" width="10" height="6">
-						<use xlink:href="img/sprite-mono.svg#arrow-payment-mobile"></use>
-					</svg>
-				</button>
-			</li>
-		{% endfor %}
-	</ul>
+	<div class="payment-mobile__inputs-wrapper">
+		<div class="payment-mobile__phone-wrapper">
+			<div class="payment-mobile__switcher-list-wrapper">
+				<ul class="payment-mobile__switcher-list">
+					{% for item in data.switcher %}
+						<li class="payment-mobile__switcher-item">
+							<button class="payment-mobile__switcher-button" value="{{item.value}}">
+								{{mixins.sprite(item.sprite)}}
+								<svg class="payment-mobile__switcher-arrow-icon" width="10" height="6">
+									<use xlink:href="img/sprite-mono.svg#arrow-payment-mobile"></use>
+								</svg>
+							</button>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<input class="payment-mobile__phone input input--grey" name="phone"  placeholder="+7 ___-___-__-__" type="number">
+		</div>
+		<input class="payment-mobile__amount input input--grey" name="amount"  placeholder="Сумма к оплате" type="number">
+		<a href="#" class="payment-mobile__link button button--blue">Оплатить</a>
+	</div>
 </section>
