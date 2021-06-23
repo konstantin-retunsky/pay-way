@@ -1,0 +1,161 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+{% import "../../blocks/round-icon-wrapper/round-icon-wrapper.njk" as iconWrapper %}
+
+{%
+	set data = {
+		class: "functions-pay-way",
+		title: {
+			text: "Функции pay way"
+		},
+		list: {
+			class: "functions-pay-way__list",
+			items: [
+				{
+					class: "functions-pay-way__list-item",
+					iconWrapper: {
+						width: 34,
+						height: 34,
+						svgName: "functions-pay-way-ico",
+						class: "functions-pay-way__icon-wrapper round-icon-wrapper--blue"
+					},
+					title: {
+						class: "functions-pay-way__title",
+						text: "PAY WAY"
+					},
+					text: {
+						class: "functions-pay-way__text",
+						text: "Быстрая и безопасная оплата без интернета.",
+						bold: {
+							class: "functions-pay-way__text-bold",
+							text: " Доступно в мобильном приложении."
+						}
+					}
+				},
+				{
+					class: "functions-pay-way__list-item",
+					iconWrapper: {
+						width: 34,
+						height: 34,
+						svgName: "functions-pay-way-payment-offline-version",
+						class: "functions-pay-way__icon-wrapper round-icon-wrapper--blue"
+					},
+					title: {
+						class: "functions-pay-way__title",
+						text: "QR Pay"
+					},
+					text: {
+						class: "functions-pay-way__text",
+						text: "Оплата товаров и услуг по QR-коду.",
+						bold: {
+							class: "functions-pay-way__text-bold",
+							text: " Доступно в мобильном приложении."
+						}
+					}
+				},
+				{
+					class: "functions-pay-way__list-item",
+					iconWrapper: {
+						width: 34,
+						height: 34,
+						svgName: "functions-pay-way-payment",
+						class: "functions-pay-way__icon-wrapper round-icon-wrapper--blue"
+					},
+					title: {
+						class: "functions-pay-way__title",
+						text: "Оплата на местах"
+					},
+					text: {
+						class: "functions-pay-way__text",
+						text: "Оплата товаров и услуг на месте.",
+						bold: {
+							class: "functions-pay-way__text-bold",
+							text: " Доступно в мобильном приложении."
+						}
+					}
+				},
+				{
+					class: "functions-pay-way__list-item",
+					iconWrapper: {
+						width: 34,
+						height: 34,
+						svgName: "functions-pay-way-payment-save-money",
+						class: "functions-pay-way__icon-wrapper  round-icon-wrapper--blue"
+					},
+					title: {
+						class: "functions-pay-way__title",
+						text: "Сохранение платежа"
+					},
+					text: {
+						class: "functions-pay-way__text",
+						text: "Сохраните платеж и в следующий раз просто повторите его."
+					}
+				},
+				{
+					class: "functions-pay-way__list-item",
+					iconWrapper: {
+						width: 34,
+						height: 34,
+						svgName: "functions-pay-way-payment-monitoring",
+						class: "functions-pay-way__icon-wrapper round-icon-wrapper--blue"
+					},
+					title: {
+						class: "functions-pay-way__title",
+						text: "Мониторинг платежей"
+					},
+					text: {
+						class: "functions-pay-way__text",
+						text: "В мониторинге хранится история покупок, переводов и поступлений. Планируйте бюджет, распределяйте расходы по категориям, оставляйте заметки."
+					}
+				},
+				{
+					class: "functions-pay-way__list-item",
+					iconWrapper: {
+						width: 34,
+						height: 34,
+						svgName: "functions-pay-way-qr-code",
+						class: "functions-pay-way__icon-wrapper round-icon-wrapper--blue"
+					},
+					title: {
+						class: "functions-pay-way__title",
+						text: "Офлайн-оплата"
+					},
+					text: {
+						class: "functions-pay-way__text",
+						text: "Оплата мобильного телефона без интернета. ",
+						bold: {
+							class: "functions-pay-way__text-bold",
+							text: " Доступно в мобильном приложении."
+						}
+					}
+				}
+			]
+		}
+	}
+%}
+
+<section class="{{ data.class }}">
+	<h2 class="visually-hidden">
+		{{ data.title.text }}
+	</h2>
+
+	<div class="container">
+		<ul class="{{ data.list.class }}">
+			{% for item in data.list.items %}
+				<li class="{{item.class}}">
+					<h3 class="{{item.title.class}}">
+						{{item.title.text}}
+					</h3>
+					<p class="{{item.text.class}}">
+						{{iconWrapper.value(item.iconWrapper)}}
+						{{item.text.text}}
+						{% if item.text.bold %}
+							<span class="{{item.text.bold.class}}">
+								{{item.text.bold.text}}
+							</span>
+						{% endif %}
+					</p>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
