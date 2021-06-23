@@ -1,0 +1,54 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{%
+	set data = {
+		class: "online-sales",
+		title: {
+			class: "online-sales__title section-title"
+		},
+		text: {
+			class: "online-sales__text section-text section-text--grey",
+			text: "Готовые решения для приема оплаты, интернет-магазина и многое другое"
+		},
+		link: {
+			class: "online-sales__link button button--blue",
+			text: "Все категории",
+			href: "#"
+		},
+		linkDesktop: {
+			class: "online-sales__link-desktop button button--blue",
+			text: "Все категории",
+			href: "#"
+		},
+		img: {
+			class: "online-sales__img",
+			width: 387,
+			height: 325,
+			src: "img/online-sales",
+			alt: "Изображение приложения pay way",
+			media: ['1100px', '320px'],
+			type: 'raster'
+		}
+	}
+%}
+
+<section class="{{ data.class }}">
+	<div class="container">
+		<div class="online-sales__text-wrapper">
+			<h2 class="{{ data.title.class }}">
+				Онлайн-касса<br>
+				для бизнеса
+			</h2>
+			<p class="{{ data.text.class }}">
+				{{ data.text.text }}
+			</p>
+		<a class="{{data.linkDesktop.class}}" href="{{data.linkDesktop.href}}">
+			{{data.linkDesktop.text}}
+		</a>
+		</div>
+		{{mixins.img(data.img)}}
+		<a class="{{data.link.class}}" href="{{data.link.href}}">
+			{{data.link.text}}
+		</a>
+	</div>
+</section>

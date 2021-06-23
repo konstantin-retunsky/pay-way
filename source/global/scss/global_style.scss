@@ -77,8 +77,9 @@ a {
 	font-weight: 700;
 }
 
-.section-title--gray {
+.section-text--grey {
 	color: $tundora;
+	font-weight: 400;
 }
 
 .section-title {
@@ -93,6 +94,10 @@ a {
 	@include media-tablet {
 		font-size: 46px;
 	}
+}
+
+.section-title--gray {
+	color: $tundora;
 }
 
 .section-title--white {

@@ -49,7 +49,7 @@
 				<ul class="payment-mobile__switcher-list">
 					{% for item in data.switcher %}
 						<li class="payment-mobile__switcher-item">
-							<button class="payment-mobile__switcher-button" value="{{item.value}}">
+							<button class="payment-mobile__switcher-button" value="{{item.value}}" aria-label="Оператор теле2">
 								{{mixins.sprite(item.sprite)}}
 								<svg class="payment-mobile__switcher-arrow-icon" width="10" height="6">
 									<use xlink:href="img/sprite-mono.svg#arrow-payment-mobile"></use>
