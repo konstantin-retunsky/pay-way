@@ -1,0 +1,57 @@
+{% import "../../global/page/mixins.njk" as mixins %}
+
+{%
+	set data = {
+		class: "download-our-app",
+		title: {
+			class: "download-our-app__title section-title section-title--white"
+		},
+		img: {
+			class: "download-our-app__img",
+			width: 374,
+			height: 348,
+			src: "img/download-our-app",
+			alt: "Электронный кошелек PAY WAY",
+			media: ['571px', '320px'],
+			type: 'raster'
+		}
+	}
+%}
+
+<section class="{{ data.class }}">
+	<div class="container">
+		<div class="download-our-app__text-wrapper">
+			<h2 class="{{ data.title.class }}">
+				Скачайте<br>
+				приложение<br>
+				и получите больше<br>
+				возможностей.
+			</h2>
+			<div class="download-our-app__markets">
+				<a href="#" class="download-our-app__market-link">
+					<svg class="download-our-app__markets-icon" width="28" height="33">
+						<use xlink:href="img/sprite-mono.svg#apple-store-icon"></use>
+					</svg>
+					<div class="download-our-app__market-link-text">
+						<span class="download-our-app__markets-text">Скачать в</span>
+						<b class="download-our-app__markets-text-bold">App Store</b>
+					</div>
+				</a>
+				<a href="#" class="download-our-app__market-link">
+					<svg class="download-our-app__markets-icon" width="28" height="33">
+						<use xlink:href="img/sprite-mono.svg#google-play-icon"></use>
+					</svg>
+					<div class="download-our-app__market-link-text">
+						<span class="download-our-app__markets-text">Скачать в</span>
+						<b class="download-our-app__markets-text-bold">Google Play</b>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="download-our-app__img-wrapper">
+			{{
+				mixins.img(data.img)
+			}}
+		</div>
+	</div>
+</section>

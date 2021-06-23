@@ -1,0 +1,169 @@
+.download-our-app {
+	overflow: hidden;
+
+	padding: 85px 4%;
+	padding-bottom: 0;
+
+	background-color: $port-gore;
+}
+
+.download-our-app .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@media (min-width: 832px) {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	@media (min-width: 1165px) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+.download-our-app__text-wrapper {
+	@media (min-width: 1165px) {
+		order: 2;
+	}
+}
+
+.download-our-app__title {
+	margin-bottom: 50px;
+
+	@include media-tablet {
+		margin-bottom: 45px;
+	}
+}
+
+.download-our-app__img {
+	position: relative;
+	z-index: 2;
+
+	display: flex;
+
+	max-width: 372px;
+	height: 348px;
+	object-fit: cover;
+
+	@media (min-width: 571px) {
+		max-width: 467px;
+		height: 421px;
+	}
+}
+
+.download-our-app__img-wrapper {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		bottom: -36px;
+		left: 48px;
+
+		display: block;
+
+		width: 225.21px;
+		height: 230.36px;
+
+		content: "";
+
+		border-radius: 50%;
+		box-shadow: 0 26.1669px 43.6115px 65.4173px rgba($dodger-blue, 0.15);
+
+		@media (min-width: 526px) {
+			bottom: -39px;
+			left: 39px;
+
+			width: 282px;
+			height: 282px;
+		}
+	}
+
+	&::after {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		display: block;
+
+		width: 380px;
+		height: 380px;
+
+		content: "";
+
+		border-radius: 50%;
+		background: $dodger-blue;
+
+		@media (min-width: 571px) {
+			width: 540px;
+			height: 421px;
+		}
+
+		@media (min-width: 1165px) {
+			transform: translate(-55%, -50%);
+		}
+	}
+}
+
+.download-our-app__markets {
+	display: flex;
+	justify-content: space-between;
+
+	max-width: 381px;
+	margin-bottom: 80px;
+
+	@media (min-width: 830px) {
+		max-width: 481px;	
+	}
+}
+
+.download-our-app__market-link {
+	display: flex;
+
+	color: $white;
+
+	&:hover .download-our-app__markets-icon,
+	&:hover,
+	&:focus .download-our-app__markets-icon,
+	&:focus {
+		color: $dodger-blue;
+		fill: $dodger-blue;
+	}
+
+	&:active .download-our-app__markets-icon,
+	&:active {
+		opacity: 0.8;
+	}
+}
+
+.download-our-app__market-link-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.download-our-app__markets-icon {
+	fill: $white;
+
+	margin-right: 10px;
+}
+
+.download-our-app__markets-text-bold {
+	font-size: 18px;
+	font-weight: 800;
+	line-height: 112.4%;
+}
+
+.download-our-app__markets-text {
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 112.4%;
+}
+
+.download-our-app__markets--mobile {
+	@include media-tablet {
+		display: none;
+	}
+}
