@@ -9853,24 +9853,6 @@ window.addEventListener("scroll", function () {
 
   lastScroll = currentScroll;
 });
-var buttonsSwitch = document.querySelectorAll(".lang-switcher__button");
-
-if (buttonsSwitch) {
-  buttonsSwitch.forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      var selectedLang = document.querySelector(".lang-switcher__selected");
-      var cloneSelectedLang = selectedLang.cloneNode(true);
-
-      if (selectedLang) {
-        selectedLang.replaceChild(btn.querySelector(".lang-switcher__ico-lang").cloneNode(true), selectedLang.querySelector(".lang-switcher__ico-lang"));
-        selectedLang.replaceChild(btn.querySelector(".lang-switcher__text").cloneNode(true), selectedLang.querySelector(".lang-switcher__text"));
-        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__text"), btn.querySelector(".lang-switcher__text"));
-        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__ico-lang"), btn.querySelector(".lang-switcher__ico-lang"));
-      }
-    });
-  });
-}
-
 var navToggle = document.querySelector(".header__menu-toggle");
 var links = document.querySelectorAll(".navigation__link");
 var nav = document.querySelector(".navigation");
@@ -9888,6 +9870,39 @@ if (links) {
       var activeLink = document.querySelector(".navigation__link--active");
       activeLink ? activeLink.classList.remove("navigation__link--active") : 0;
       link.classList.add("navigation__link--active");
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  var currentPage = document.body.dataset.currentPage;
+
+  if (currentPage) {
+    var _navActive = document.querySelector('.navigation__link--active');
+
+    var currentNavActive = document.querySelector(".navigation__link[value=".concat(currentPage, "]"));
+
+    if (currentNavActive) {
+      _navActive.classList.remove('navigation__link--active');
+
+      currentNavActive.classList.add('navigation__link--active');
+    }
+  }
+});
+var buttonsSwitch = document.querySelectorAll(".lang-switcher__button");
+
+if (buttonsSwitch) {
+  buttonsSwitch.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      var selectedLang = document.querySelector(".lang-switcher__selected");
+      var cloneSelectedLang = selectedLang.cloneNode(true);
+
+      if (selectedLang) {
+        selectedLang.replaceChild(btn.querySelector(".lang-switcher__ico-lang").cloneNode(true), selectedLang.querySelector(".lang-switcher__ico-lang"));
+        selectedLang.replaceChild(btn.querySelector(".lang-switcher__text").cloneNode(true), selectedLang.querySelector(".lang-switcher__text"));
+        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__text"), btn.querySelector(".lang-switcher__text"));
+        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__ico-lang"), btn.querySelector(".lang-switcher__ico-lang"));
+      }
     });
   });
 }

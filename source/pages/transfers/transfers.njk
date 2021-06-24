@@ -1,0 +1,12 @@
+{% extends "global/page/layout.njk" %}
+{% set metaDescription = "Денежные переводы" %}
+{% set title = "Денежные переводы" %}
+{% set currentPage = "transfers-page" %}
+
+{% block content %}
+	<main class="main">
+		{% include "blocks/transfers-to-card/transfers-to-card.njk" %}
+		{% include "blocks/download-our-app/download-our-app.njk" %}
+		{% include "blocks/online-sales/online-sales.njk" %}
+	</main>
+{% endblock %}

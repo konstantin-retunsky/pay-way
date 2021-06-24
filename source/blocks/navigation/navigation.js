@@ -18,3 +18,17 @@ if (links) {
 		});
 	});
 }
+
+document.addEventListener("DOMContentLoaded", function(e) {
+	const currentPage = document.body.dataset.currentPage;
+
+	if (currentPage) {
+		const navActive = document.querySelector('.navigation__link--active')
+		const currentNavActive = document.querySelector(`.navigation__link[value=${currentPage}]`)
+
+		if (currentNavActive) {
+			navActive.classList.remove('navigation__link--active')
+			currentNavActive.classList.add('navigation__link--active')
+		}
+	}
+});
