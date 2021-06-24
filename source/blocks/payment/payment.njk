@@ -1,25 +1,295 @@
 {% import "../../global/page/mixins.njk" as mixins %}
+{% import "../../blocks/payment-list/payment-list.njk" as paymentList %}
 
 {%
 	set data = {
 		class: "payment",
 		title: {
-			class: "payment__title",
-			text: "title block"
+			class: "payment__title section-title",
+			text: "Оплата"
 		},
 		text: {
-			class: "payment__text",
-			text: "text block"
+			class: "payment__text section-text section-text--grey",
+			text: "Любой картой Online"
+		},
+		search: {
+			class: "payment__search input input--grey",
+			text: "Поиск",
+			innerButton: {
+				class: "payment__search-inner-button button button--blue",
+				text: "Поиск"
+			}
+		},
+		mobileOperators: {
+			class: "payment__mobile-operators",
+			title: "Мобильные операторы",
+			count: "25",
+			items: [
+				{
+					href: "#",
+					value: "uzmobile-gsm",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/uzmobile-gsm"
+					}
+				},
+				{
+					href: "#",
+					value: "beeline",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/beeline"
+					}
+				},
+				{
+					href: "#",
+					value: "ucell",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/ucell"
+					}
+				},
+				{
+					href: "#",
+					value: "mobiuz",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/mobiuz"
+					}
+				},
+				{
+					href: "#",
+					value: "perfectum",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/perfectum"
+					}
+				},
+				{
+					href: "#",
+					value: "uzmobile-coma",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/uzmobile-coma"
+					}
+				},
+				{
+					href: "#",
+					value: "mts-ru",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/mts-ru"
+					}
+				},
+				{
+					href: "#",
+					value: "other-mobile-provider",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/other-mobile-provider"
+					}
+				},
+				{
+					href: "#",
+					value: "beeline-ru",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/beeline-ru"
+					}
+				},
+				{
+					href: "#",
+					value: "megacom",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/megacom"
+					}
+				},
+				{
+					href: "#",
+					value: "tele2-ru",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/tele2-ru"
+					}
+				},
+				{
+					href: "#",
+					value: "beeline-kg",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/beeline-kg"
+					}
+				},
+				{
+					href: "#",
+					value: "beeline",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/beeline"
+					}
+				}
+			]
+		},
+		internetProviders: {
+			class: "payment__internet-providers",
+			title: "Интернет провайдеры",
+			count: "25",
+			items: [
+				{
+					href: "#",
+					value: "als",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/als"
+					}
+				},
+				{
+					href: "#",
+					value: " fibernet",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/fibernet"
+					}
+				},
+				{
+					href: "#",
+					value: "netco",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/netco"
+					}
+				},
+				{
+					href: "#",
+					value: "sarkor-telecom",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/sarkor-telecom"
+					}
+				},
+				{
+					href: "#",
+					value: "sola",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/sola"
+					}
+				},
+				{
+					href: "#",
+					value: "turon-telecom",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/turon-telecom"
+					}
+				},
+				{
+					href: "#",
+					value: "comnet",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/comnet"
+					}
+				},
+				{
+					href: "#",
+					value: "free-link",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/free-link"
+					}
+				},
+				{
+					href: "#",
+					value: "perfectum",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/perfectum"
+					}
+				},
+				{
+					href: "#",
+					value: "sharq-telekom",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/sharq-telekom"
+					}
+				},
+				{
+					href: "#",
+					value: "tps",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/tps"
+					}
+				},
+				{
+					href: "#",
+					value: "uzmobile",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/uzmobile"
+					}
+				},
+				{
+					href: "#",
+					value: "beeline",
+					img: {
+						width: 130,
+						height: 64,
+						src: "img/beeline"
+					}
+				}
+			]
 		}
 	}
 %}
 
+
 <section class="{{ data.class }}">
-	<h2 class="visually-hidden"></h2>
-	<h2 class="{{ data.title.class }}">
-		{{ data.title.text }}
-	</h2>
-	<p class="{{ data.text.class }}">
-		{{ data.text.text }}
-	</p>
+	<div class="container">
+		<div class="payment__text-wrapper">
+			<h2 class="{{ data.title.class }}">
+				{{ data.title.text }}
+			</h2>
+			<p class="{{ data.text.class }}">
+				{{ data.text.text }}
+			</p>
+		</div>
+
+		<div class="payment__search-wrapper">
+			<input class="{{data.search.class}}" type="search" name="search" id="search" placeholder="{{data.search.text}}">
+			<button class="{{data.search.innerButton.class}}" type="submit">
+				{{data.search.innerButton.text}}
+			</button>
+		</div>
+	</div>
+	{{paymentList.value(data.mobileOperators)}}
+	{{paymentList.value(data.internetProviders)}}
 </section>

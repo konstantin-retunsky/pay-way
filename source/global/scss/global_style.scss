@@ -10,7 +10,7 @@
 @include font-face("Montserrat", "../fonts/montserrat", 900, "normal");
 
 .main {
-	padding-top: 75px;
+	padding-top: 97px;
 
 	@include media-tablet {
 		padding-top: 106px;
@@ -259,3 +259,5 @@ input[type="radio"].visually-hidden {
 @import "../../blocks/functions-pay-way/functions-pay-way.scss";
 @import "../../blocks/download-our-app/download-our-app.scss";
 @import "../../blocks/online-sales/online-sales.scss";
+@import "../../blocks/payment/payment.scss";
+

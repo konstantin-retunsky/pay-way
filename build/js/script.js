@@ -2,6 +2,49 @@
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+var optimizedResize = function () {
+  var callbacks = [],
+      running = false; // fired on resize event
+
+  function resize() {
+    if (!running) {
+      running = true;
+
+      if (window.requestAnimationFrame) {
+        window.requestAnimationFrame(runCallbacks);
+      } else {
+        setTimeout(runCallbacks, 66);
+      }
+    }
+  } // run the actual callbacks
+
+
+  function runCallbacks() {
+    callbacks.forEach(function (callback) {
+      callback();
+    });
+    running = false;
+  } // adds callback to loop
+
+
+  function addCallback(callback) {
+    if (callback) {
+      callbacks.push(callback);
+    }
+  }
+
+  return {
+    // public method to add additional callback
+    add: function add(callback) {
+      if (!callbacks.length) {
+        window.addEventListener('resize', resize);
+      }
+
+      addCallback(callback);
+    }
+  };
+}();
+
 (function (global, factory) {
   (typeof exports === "undefined" ? "undefined" : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Swiper = factory());
 })(void 0, function () {
@@ -9907,6 +9950,64 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   }
 });
+var buttonsShowMore = document.querySelectorAll(".payment-list__more");
+buttonsShowMore.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    var paymentListSection = btn.parentElement.parentElement;
+    var list = paymentListSection.querySelector(".payment-list__list");
+    var isActive = btn.classList.toggle("payment-list__more--active");
+    paymentListSection.classList.toggle("payment-list--shown-list");
+    isActive ? showItems(list) : hiddenItems(list);
+  });
+});
+
+if (buttonsShowMore) {
+  optimizedResize.add(function () {
+    var paymentLists = document.querySelectorAll(".payment-list__list");
+    paymentLists.forEach(function (list) {
+      return hiddenItems(list);
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  var paymentListSections = document.querySelectorAll(".payment-list");
+  paymentListSections.forEach(function (seciton) {
+    var list = seciton.querySelector(".payment-list__list");
+    var countText = seciton.querySelector(".payment-list__count");
+    hiddenItems(list);
+    countText.innerHTML = list.querySelectorAll('li').length;
+  });
+});
+
+function showItems(list) {
+  list.querySelectorAll("li").forEach(function (item) {
+    return item.style.display = "block";
+  });
+}
+
+function hiddenItems(list) {
+  if (!list.parentElement.classList.contains("payment-list--shown-list")) {
+    var elementsList = list.querySelectorAll(".payment-list__item");
+    var elementsWillFit = Math.round(list.offsetWidth / (elementsList[0].offsetWidth + 40));
+    var maxSHow = 11;
+
+    if (elementsWillFit <= 3) {
+      maxSHow = 5;
+    } else if (elementsWillFit <= 4) {
+      maxSHow = 7;
+    } else if (elementsWillFit <= 5) {
+      maxSHow = 9;
+    } else if (elementsWillFit <= 6) {
+      maxSHow = 11;
+    }
+
+    elementsList.forEach(function (item, index) {
+      return index > maxSHow ? item.style.display = "none" : item.style.display = "block";
+    });
+  }
+}
+
 var swiper = new Swiper(".payment-loans .swiper-container", {
   slidesPerView: "auto",
   // direction: getDirection(),

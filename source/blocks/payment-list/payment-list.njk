@@ -1,27 +1,50 @@
+{% import "../../global/page/mixins.njk" as mixins %}
 
-            {% import "../../global/page/mixins.njk" as mixins %}
+{% macro value(args) %}
+	<section class="payment-list">
+		<div class="payment-list__text-wrapper">
+			<h2 class="payment-list__title">
+				{{ args.title }}
+			</h2>
+			<span class="payment-list__count">
+				{{ args.count }}
+			</span>
+		</div>
 
-            {%
-              set data = {
-                class: "payment-list",
-                title: {
-                  class: "payment-list__title",
-                  text: "title block"
-                },
-                text: {
-                  class: "payment-list__text",
-                  text: "text block"
-                }
-              }
-            %}
+		<ul class="payment-list__list {{ args.class }}">
+			{% for item in args.items %}
+				<li class="payment-list__item">
+					<a class="payment-list__item-link" href="{{item.href}}" value="{{item.value}}">
 
-            <section class="{{ data.class }}">
-              <h2 class="visually-hidden"></h2>
-              <h2 class="{{ data.title.class }}">
-                {{ data.title.text }}
-              </h2>
-              <p class="{{ data.text.class }}">
-                {{ data.text.text }}
-              </p>
-            </section>
-          
+						<picture>
+							<source
+							media="(min-width: 0)"
+							srcset="{{item.img.src}}.webp 1x,
+											{{item.img.src}}@2x.webp 2x">
+							<img
+							class="payment-list__img"
+							src="{{item.img.src}}.png"
+							srcset="{{item.img.src}}.png 1x,
+										{{item.img.src}}.png@2x.png 2x"
+							alt="{{item.value}}"
+							width="{{item.img.width}}"
+							height="{{item.img.height}}">
+						</picture>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+
+		<div class="payment-list__more-wrapper">
+			<button class="payment-list__more">
+				<div class="payment-list__more-icon-wrapper">
+					<svg class="payment-list__more-icon" width="12" height="9">
+						<use xlink:href="img/sprite-mono.svg#arrow"></use>
+					</svg>
+				</div>
+				Показать всё
+			</button>
+		</div>
+	</section>
+
+{% endmacro %}
