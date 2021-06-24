@@ -9853,6 +9853,24 @@ window.addEventListener("scroll", function () {
 
   lastScroll = currentScroll;
 });
+var buttonsSwitch = document.querySelectorAll(".lang-switcher__button");
+
+if (buttonsSwitch) {
+  buttonsSwitch.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      var selectedLang = document.querySelector(".lang-switcher__selected");
+      var cloneSelectedLang = selectedLang.cloneNode(true);
+
+      if (selectedLang) {
+        selectedLang.replaceChild(btn.querySelector(".lang-switcher__ico-lang").cloneNode(true), selectedLang.querySelector(".lang-switcher__ico-lang"));
+        selectedLang.replaceChild(btn.querySelector(".lang-switcher__text").cloneNode(true), selectedLang.querySelector(".lang-switcher__text"));
+        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__text"), btn.querySelector(".lang-switcher__text"));
+        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__ico-lang"), btn.querySelector(".lang-switcher__ico-lang"));
+      }
+    });
+  });
+}
+
 var navToggle = document.querySelector(".header__menu-toggle");
 var links = document.querySelectorAll(".navigation__link");
 var nav = document.querySelector(".navigation");
@@ -9889,24 +9907,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   }
 });
-var buttonsSwitch = document.querySelectorAll(".lang-switcher__button");
-
-if (buttonsSwitch) {
-  buttonsSwitch.forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      var selectedLang = document.querySelector(".lang-switcher__selected");
-      var cloneSelectedLang = selectedLang.cloneNode(true);
-
-      if (selectedLang) {
-        selectedLang.replaceChild(btn.querySelector(".lang-switcher__ico-lang").cloneNode(true), selectedLang.querySelector(".lang-switcher__ico-lang"));
-        selectedLang.replaceChild(btn.querySelector(".lang-switcher__text").cloneNode(true), selectedLang.querySelector(".lang-switcher__text"));
-        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__text"), btn.querySelector(".lang-switcher__text"));
-        btn.replaceChild(cloneSelectedLang.querySelector(".lang-switcher__ico-lang"), btn.querySelector(".lang-switcher__ico-lang"));
-      }
-    });
-  });
-}
-
 var swiper = new Swiper(".payment-loans .swiper-container", {
   slidesPerView: "auto",
   // direction: getDirection(),

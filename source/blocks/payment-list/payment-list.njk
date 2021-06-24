@@ -1,0 +1,27 @@
+
+            {% import "../../global/page/mixins.njk" as mixins %}
+
+            {%
+              set data = {
+                class: "payment-list",
+                title: {
+                  class: "payment-list__title",
+                  text: "title block"
+                },
+                text: {
+                  class: "payment-list__text",
+                  text: "text block"
+                }
+              }
+            %}
+
+            <section class="{{ data.class }}">
+              <h2 class="visually-hidden"></h2>
+              <h2 class="{{ data.title.class }}">
+                {{ data.title.text }}
+              </h2>
+              <p class="{{ data.text.class }}">
+                {{ data.text.text }}
+              </p>
+            </section>
+          

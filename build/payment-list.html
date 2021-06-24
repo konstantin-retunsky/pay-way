@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<title>Денежные переводы</title>
+		<title>Главная страница Sedona</title>
 
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<meta
 			name="description"
-			content="Денежные переводы">
+			content="Главная страница">
 
 		<link rel="stylesheet preconnect" href="css/style.min.css">
 
@@ -16,7 +16,7 @@
 
 	</head>
 
-	<body data-current-page="transfers-page">
+	<body data-current-page="">
 		
 			
 
@@ -44,7 +44,7 @@
 			<a href="payment.html" class="navigation__link" value="payment-page">Оплата</a>
 		</li>
 		<li class="navigation__item">
-			<a href="help.html" class="navigation__link" value="help.html">Помощь</a>
+			<a href="" class="navigation__link">Помощь</a>
 		</li>
 	</ul>
 	
@@ -134,244 +134,15 @@
 
 		
 		
-	<main class="main">
-		
-
-
-
-
-<section class="transfer-to-card">
-	<h2 class="transfer-to-card__title section-title">
-		Переводы<br>
-		с карты на карту	
-	</h2>
-	<div class="transfer-to-card__amount-wrapper">
-		<label class="visually-hidden" for="amount">Receive promotional offers?</label>
-		<input class="transfer-to-card__amount" type="number" id="amount" pattern="^[0-9]+$" value="0">
-		<b class="transfer-to-card__amount-text-bold">Введите сумму перевода</b>
-		<p class="transfer-to-card__amount-text">*Стоимость услуги 1% от суммы перевода</p>
-
-	</div>
-	<div class="transfer-to-card__cards-wrapper">
-		<div class="transfer-to-card__card-from-wrapper">
-
-			<label class="visually-hidden" for="card-form">Receive promotional offers?</label>
-			<input class="transfer-to-card__card-from input input--grey" name="card-from" id="card-form" type="number" placeholder="Номер карты отправителя">
-			<label class="visually-hidden" for="card-from-date">Receive promotional offers?</label>
-			<input class="transfer-to-card__card-from-date input input--grey" id="card-from-date" name="card-from-date" type="number" placeholder="ММ/ГГ">
-		</div>
-		<input class="transfer-to-card__card-to input input--grey" type="number" placeholder="Номер карты получателя">
-		<button class="transfer-to-card__button button button--blue" type="submit">Перевести</button>
-	</div>
-	
-	
-		<div class="slider transfer-to-card__slider">
-	
-		<div class="swiper-container">
-			<ul class="slider__list swiper-wrapper">
-				
-					<li class="slider__item swiper-slide">
-						
-							<img src="img/sberbank.webp" width="127" height="36" alt="Логотип банка">
-						
-					</li>
-				
-					<li class="slider__item swiper-slide">
-						
-							<img src="img/tinkof.webp" width="116" height="74" alt="Логотип банка">
-						
-					</li>
-				
-					<li class="slider__item swiper-slide">
-						
-							<img src="img/alfabank.webp" width="148" height="61" alt="Логотип банка">
-						
-					</li>
-				
-					<li class="slider__item swiper-slide">
-						
-							<img src="img/agrobank.webp" width="107" height="107" alt="Логотип банка">
-						
-					</li>
-				
-					<li class="slider__item swiper-slide">
-						
-							<img src="img/ipotekabank.webp" width="101" height="101" alt="Логотип банка">
-						
-					</li>
-				
-					<li class="slider__item swiper-slide">
-						
-							<img src="img/trastbank.webp" width="111" height="111" alt="Логотип банка">
-						
-					</li>
-				
-					<li class="slider__item swiper-slide">
-						
-							<img src="img/sberbank.webp" width="127" height="36" alt="Логотип банка">
-						
-					</li>
-				
-					<li class="slider__item swiper-slide">
-						
-							<img src="img/sberbank.webp" width="127" height="36" alt="Логотип банка">
-						
-					</li>
-				
-					<li class="slider__item swiper-slide">
-						
-							<img src="img/sberbank.webp" width="127" height="36" alt="Логотип банка">
-						
-					</li>
-				
-			</ul>
-		</div>
-		<button class="slider__button slider__button--next" aria-label="Прелистнуть вперед">
-			<svg class="slider__button-icon" width="8" height="12">
-				<use xlink:href="img/sprite-mono.svg#arrow-slider"></use>
-			</svg>
-		</button>
-		<button class="slider__button slider__button--prev" aria-label="Перелестнуть назад">
-			<svg class="slider__button-icon" width="8" height="12">
-				<use xlink:href="img/sprite-mono.svg#arrow-slider"></use>
-			</svg>
-		</button>
-	</div>
-
-</section>
-
-		
-
-
-
-<section class="download-our-app">
-	<div class="container">
-		<div class="download-our-app__text-wrapper">
-			<h2 class="download-our-app__title section-title section-title--white">
-				Скачайте<br>
-				приложение<br>
-				и получите больше<br>
-				возможностей.
-			</h2>
-			<div class="download-our-app__markets">
-				<a href="#" class="download-our-app__market-link">
-					<svg class="download-our-app__markets-icon" width="28" height="33">
-						<use xlink:href="img/sprite-mono.svg#apple-store-icon"></use>
-					</svg>
-					<div class="download-our-app__market-link-text">
-						<span class="download-our-app__markets-text">Скачать в</span>
-						<b class="download-our-app__markets-text-bold">App Store</b>
-					</div>
-				</a>
-				<a href="#" class="download-our-app__market-link">
-					<svg class="download-our-app__markets-icon" width="28" height="33">
-						<use xlink:href="img/sprite-mono.svg#google-play-icon"></use>
-					</svg>
-					<div class="download-our-app__market-link-text">
-						<span class="download-our-app__markets-text">Скачать в</span>
-						<b class="download-our-app__markets-text-bold">Google Play</b>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="download-our-app__img-wrapper">
-			
-	<picture class="">
-		
-			
-				
-					<source
-						type="image/webp"
-						media="(min-width: 571px)"
-						srcset="img/download-our-app-571px.webp 1x,
-										img/download-our-app-571px@2x.webp 2x">
-					<source
-						media="(min-width: 571px)"
-						srcset="img/download-our-app-571px.jpg 1x,
-										img/download-our-app-571px@2x.jpg 2x">
-				
-			
-				
-					<source
-						media="(min-width: 0)"
-						srcset="img/download-our-app-320px.webp 1x,
-										img/download-our-app-320px@2x.webp 2x">
-					<img
-						class="download-our-app__img"
-						src="img/download-our-app-320px.jpg"
-						srcset="img/download-our-app-320px.jpg 1x,
-									jimg/download-our-app-320px@2x.jpg 2x"
-						alt="Электронный кошелек PAY WAY"
-						width="374"
-						height="348">
-				
-			
-		
-	</picture>
-
-		</div>
-	</div>
-</section>
-
-		
-
-
-
-<section class="online-sales">
-	<div class="container">
-		<div class="online-sales__text-wrapper">
-			<h2 class="online-sales__title section-title">
-				Онлайн-касса<br>
-				для бизнеса
-			</h2>
-			<p class="online-sales__text section-text section-text--grey">
-				Готовые решения для приема оплаты, интернет-магазина и многое другое
-			</p>
-		<a class="online-sales__link-desktop button button--blue" href="#">
-			Все категории
-		</a>
-		</div>
-		
-	<picture class="">
-		
-			
-				
-					<source
-						type="image/webp"
-						media="(min-width: 1100px)"
-						srcset="img/online-sales-1100px.webp 1x,
-										img/online-sales-1100px@2x.webp 2x">
-					<source
-						media="(min-width: 1100px)"
-						srcset="img/online-sales-1100px.jpg 1x,
-										img/online-sales-1100px@2x.jpg 2x">
-				
-			
-				
-					<source
-						media="(min-width: 0)"
-						srcset="img/online-sales-320px.webp 1x,
-										img/online-sales-320px@2x.webp 2x">
-					<img
-						class="online-sales__img"
-						src="img/online-sales-320px.jpg"
-						srcset="img/online-sales-320px.jpg 1x,
-									jimg/online-sales-320px@2x.jpg 2x"
-						alt="Изображение приложения pay way"
-						width="387"
-						height="325">
-				
-			
-		
-	</picture>
-
-		<a class="online-sales__link button button--blue" href="#">
-			Все категории
-		</a>
-	</div>
-</section>
-
-	</main>
+  <main class="main">
+    <h1 class="visually-hidden">Главная страница сайта</h1>
+    <h1 class="main__title">
+      title page
+    </h1>
+    <p class="main__text">
+      text page
+    </p>
+  </main>
 
 
 		
