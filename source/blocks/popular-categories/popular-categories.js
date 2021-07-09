@@ -3,6 +3,7 @@
 let popularCategories = new Swiper(".popular-categories .swiper-container", {
 	slidesPerView: "auto",
 	direction: getDirectionCategories(),
+	loop: true,
 	navigation: {
 		nextEl: ".popular-categories .slider__button--next",
 		prevEl: ".popular-categories .slider__button--prev",
