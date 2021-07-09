@@ -1,96 +1,102 @@
-// const popupCloses = document.querySelectorAll(".popup__close");
-// const popupRegistration = document.querySelector("#popup-registration");
-// const popupLogin = document.querySelector("#popup-login");
-// const submitRegistration = popupRegistration.querySelector(
-// 	"button[type=submit]"
-// );
-// const submitLogin = popupLogin.querySelector("button[type=submit]");
+const popupCloses = document.querySelectorAll(".popup__close");
+const popupRegistration = document.querySelector("#popup-registration");
+const popupLogin = document.querySelector("#popup-login");
+const submitRegistration = popupRegistration.querySelector(
+	"button[type=submit]"
+);
+const submitLogin = popupLogin.querySelector("button[type=submit]");
 
-// popupCloses
-// 	? popupCloses.forEach((close) => {
-// 			close.addEventListener("click", function (e) {
-// 				document
-// 					.querySelectorAll(".popup")
-// 					.forEach((popup) => popup.classList.remove("popup--open"));
-// 			});
-// 	  })
-// 	: 0;
 
-// const introButton = document.querySelector(".intro__button[type=submit]");
+const popups = document.querySelectorAll(".popup");
 
-// if (introButton) {
-// 	introButton.addEventListener("click", function (e) {
-// 		e.preventDefault();
-// 		const introPhone = document.querySelector(".intro__phone");
+if (popups) {
+	popups.forEach((popup) => {
+		popup.addEventListener("click", function (event) {
+			if (event.target.dataset.close) {
+				popup.classList.add("popup--close");
+				setTimeout(() => {
+					popup.classList.remove("popup--open");
+					popup.classList.remove("popup--close");
+				}, 600);
+			}
+		});
+	});
+}
 
-// 		if (introPhone) {
-// 			popupRegistration && introPhone.value != ""
-// 				? (popupRegistration.querySelector("input[type=tel]").value =
-// 						introPhone.value)
-// 				: 0;
-// 		}
+const introButton = document.querySelector(".intro__button[type=submit]");
 
-// 		if (popupRegistration) {
-// 			popupRegistration.classList.add("popup--open");
-// 			popupRegistration.querySelector("input[type=password]").focus();
-// 		}
-// 	});
-// }
+if (introButton) {
+	introButton.addEventListener("click", function (e) {
+		e.preventDefault();
+		const introPhone = document.querySelector(".intro__phone");
 
-// if (submitRegistration) {
-// 	submitRegistration.addEventListener("click", function (e) {
-// 		e.preventDefault();
-// 		const telRegistration = popupRegistration.querySelector("input[name=tel]");
-// 		const passwordRegistration = popupRegistration.querySelector(
-// 			"input[name=password]"
-// 		);
-// 		const termsRegistration =
-// 			popupRegistration.querySelector("input[name=terms]");
+		if (introPhone) {
+			popupRegistration && introPhone.value != ""
+				? (popupRegistration.querySelector("input[type=tel]").value =
+						introPhone.value)
+				: 0;
+		}
 
-// 		if (telRegistration.value == "" || passwordRegistration.value == "") {
-// 			alert("Заполните поля");
-// 			return;
-// 		}
+		if (popupRegistration) {
+			popupRegistration.classList.add("popup--open");
+			popupRegistration.querySelector("input[type=password]").focus();
+		}
+	});
+}
 
-// 		if (termsRegistration && !termsRegistration.checked) {
-// 			alert("Регистрация возможна только при принятии соглашения");
-// 			return;
-// 		}
+if (submitRegistration) {
+	submitRegistration.addEventListener("click", function (e) {
+		e.preventDefault();
+		const telRegistration = popupRegistration.querySelector("input[name=tel]");
+		const passwordRegistration = popupRegistration.querySelector(
+			"input[name=password]"
+		);
+		const termsRegistration =
+			popupRegistration.querySelector("input[name=terms]");
 
-// 		//ajax
-// 		if (telRegistration && passwordRegistration) {
-// 			const telLogin = popupLogin.querySelector("input[name=tel]");
-// 			const passwordLogin = popupLogin.querySelector("input[name=password]");
+		if (telRegistration.value == "" || passwordRegistration.value == "") {
+			alert("Заполните поля");
+			return;
+		}
 
-// 			telLogin ? (telLogin.value = telRegistration.value) : "";
-// 			passwordLogin ? (passwordLogin.value = passwordRegistration.value) : "";
-// 		}
+		if (termsRegistration && !termsRegistration.checked) {
+			alert("Регистрация возможна только при принятии соглашения");
+			return;
+		}
 
-// 		popupRegistration.classList.remove("popup--open");
-// 		popupLogin.classList.add("popup--open");
-// 		popupLogin.querySelector(".popup__code").focus();
-// 	});
-// }
+		//ajax
+		if (telRegistration && passwordRegistration) {
+			const telLogin = popupLogin.querySelector("input[name=tel]");
+			const passwordLogin = popupLogin.querySelector("input[name=password]");
 
-// if (submitLogin) {
-// 	submitLogin.addEventListener("click", function (e) {
-// 		e.preventDefault();
+			telLogin ? (telLogin.value = telRegistration.value) : "";
+			passwordLogin ? (passwordLogin.value = passwordRegistration.value) : "";
+		}
 
-// 		const codeLogin = popupLogin.querySelector("input[name=code]");
-// 		const telLogin = popupLogin.querySelector("input[name=tel]");
-// 		const passwordLogin = popupLogin.querySelector("input[name=password]");
+		popupRegistration.classList.remove("popup--open");
+		popupLogin.classList.add("popup--open");
+		popupLogin.querySelector(".popup__code").focus();
+	});
+}
 
-// 		if (
-// 			telLogin.value == "" ||
-// 			passwordLogin.value == "" ||
-// 			codeLogin.value == ""
-// 		) {
-// 			alert("Заполните поля");
-// 			return;
-// 		}
+if (submitLogin) {
+	submitLogin.addEventListener("click", function (e) {
+		e.preventDefault();
 
-// 		//ajax
+		const codeLogin = popupLogin.querySelector("input[name=code]");
+		const telLogin = popupLogin.querySelector("input[name=tel]");
+		const passwordLogin = popupLogin.querySelector("input[name=password]");
 
-// 		popupLogin.classList.remove("popup--open");
-// 	});
-// }
+		if (
+			telLogin.value == "" ||
+			passwordLogin.value == "" ||
+			codeLogin.value == ""
+		) {
+			alert("Заполните поля");
+			return;
+		}
+
+		popupLogin.classList.remove("popup--open");
+	});
+}
+
