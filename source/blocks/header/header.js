@@ -11,11 +11,14 @@ window.addEventListener("scroll", () => {
 	// if (nav && nav.contains('navigation--active')) {
 	// 	return;
 	// }
+	console.log(currentScroll, 'curr scroll')
+	console.log(lastScroll,'last scroll')
+	debugger
 
 	if (currentScroll <= 30) {
 		body.classList.remove(scrollUp);
 		header ? header.classList.remove("header--fixed") : 0;
-		return;
+		// return;
 	}
 
 	if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
